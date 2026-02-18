@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Rentabilidad del Almendro - PrecioAlmendra</title>
+    <meta name="description" content="Calcula la rentabilidad de tu plantaci&oacute;n de almendros. Estima ingresos, costes y beneficio seg&uacute;n hect&aacute;reas, rendimiento, variedad y precios actuales de lonja.">
+    <link rel="canonical" href="https://precioalmendra.com/pages/calculadora.html">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#1B5E20">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <a href="../" class="header__logo">
+                <svg class="header__icon" viewBox="0 0 32 32" fill="none"><ellipse cx="16" cy="16" rx="10" ry="14" fill="#C8A96E" stroke="#8B6914" stroke-width="1.5"/><ellipse cx="16" cy="16" rx="6" ry="10" fill="#DFC08A"/><line x1="16" y1="3" x2="16" y2="29" stroke="#8B6914" stroke-width="1"/></svg>
+                <span>PrecioAlmendra</span>
+            </a>
+            <nav class="header__nav" id="mainNav">
+                <a href="../" class="header__link">Inicio</a>
+                <a href="lonja-albacete.html" class="header__link">Albacete</a>
+                <a href="lonja-murcia.html" class="header__link">Murcia</a>
+                <a href="lonja-reus.html" class="header__link">Reus</a>
+                <a href="lonja-cordoba.html" class="header__link">C&oacute;rdoba</a>
+                <a href="calculadora.html" class="header__link header__link--active">Calculadora</a>
+            </nav>
+            <div class="header__actions">
+                <button class="btn-icon" id="themeToggle" aria-label="Cambiar tema">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <button class="btn-hamburger" id="menuToggle" aria-label="Men&uacute;"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb container">
+            <a href="../">Inicio</a><span>/</span>Calculadora de Rentabilidad
+        </div>
+
+        <section class="lonja-hero">
+            <div class="container">
+                <h1 class="lonja-hero__name">Calculadora de Rentabilidad</h1>
+                <p class="lonja-hero__region">Estima los ingresos de tu plantaci&oacute;n seg&uacute;n precios actuales de lonja</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="calc-full" id="calcFullForm">
+                    <h2 class="section__title mb-16">Datos de tu explotaci&oacute;n</h2>
+                    <div class="calc-full__grid">
+                        <div class="form-group">
+                            <label for="fullHectareas">Hect&aacute;reas de almendro</label>
+                            <input type="number" id="fullHectareas" value="10" min="0.1" step="0.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="fullRendimiento">Rendimiento (kg pepita/ha)</label>
+                            <input type="number" id="fullRendimiento" value="2000" min="100" step="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="fullVariedad">Variedad principal</label>
+                            <select id="fullVariedad">
+                                <option value="comuna">Comuna</option>
+                                <option value="marcona">Marcona</option>
+                                <option value="largueta">Largueta</option>
+                                <option value="guara">Guara</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fullLonja">Lonja de referencia</label>
+                            <select id="fullLonja">
+                                <option value="albacete">Albacete</option>
+                                <option value="murcia">Murcia</option>
+                                <option value="reus">Reus</option>
+                                <option value="cordoba">C&oacute;rdoba</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fullCostes">Costes de explotaci&oacute;n (&euro;/ha)</label>
+                            <input type="number" id="fullCostes" value="3000" min="0" step="100">
+                        </div>
+                    </div>
+
+                    <div class="calc-full__results mt-24">
+                        <div class="result-card">
+                            <div class="result-card__value" id="resPrecioKg">--</div>
+                            <div class="result-card__label">Precio actual &euro;/kg</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-card__value" id="resKg">--</div>
+                            <div class="result-card__label">Producci&oacute;n total</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-card__value" id="resIngresos">--</div>
+                            <div class="result-card__label">Ingresos brutos</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-card__value" id="resCostes">--</div>
+                            <div class="result-card__label">Costes totales</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-card__value" id="resBeneficio">--</div>
+                            <div class="result-card__label">Beneficio neto</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-card__value" id="resMargen">--</div>
+                            <div class="result-card__label">Margen</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--alt">
+            <div class="container">
+                <h2 class="section__title">Rendimientos orientativos por variedad</h2>
+                <p class="section__subtitle">Producci&oacute;n media en plantaciones adultas en regad&iacute;o y secano</p>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Variedad</th>
+                                <th>Secano (kg/ha)</th>
+                                <th>Regad&iacute;o (kg/ha)</th>
+                                <th>Rendimiento c&aacute;scara/pepita</th>
+                                <th>Uso principal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="td-variety">Marcona</td>
+                                <td>800 - 1.200</td>
+                                <td>1.800 - 2.500</td>
+                                <td>26 - 30%</td>
+                                <td>Consumo directo, turr&oacute;n</td>
+                            </tr>
+                            <tr>
+                                <td class="td-variety">Comuna</td>
+                                <td>600 - 1.000</td>
+                                <td>1.500 - 2.200</td>
+                                <td>24 - 28%</td>
+                                <td>Industria, reposter&iacute;a</td>
+                            </tr>
+                            <tr>
+                                <td class="td-variety">Largueta</td>
+                                <td>700 - 1.100</td>
+                                <td>1.600 - 2.300</td>
+                                <td>25 - 29%</td>
+                                <td>Consumo directo, snacks</td>
+                            </tr>
+                            <tr>
+                                <td class="td-variety">Guara</td>
+                                <td>900 - 1.400</td>
+                                <td>2.000 - 3.000</td>
+                                <td>30 - 35%</td>
+                                <td>Industria, alta producci&oacute;n</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section__title">Costes orientativos de explotaci&oacute;n</h2>
+                <p class="section__subtitle">Costes medios por hect&aacute;rea en plantaciones adultas</p>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Secano (&euro;/ha)</th>
+                                <th>Regad&iacute;o (&euro;/ha)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Poda y mantenimiento</td><td>400 - 600</td><td>500 - 800</td></tr>
+                            <tr><td>Tratamientos fitosanitarios</td><td>300 - 500</td><td>400 - 700</td></tr>
+                            <tr><td>Abonado</td><td>200 - 350</td><td>350 - 600</td></tr>
+                            <tr><td>Riego</td><td>--</td><td>500 - 900</td></tr>
+                            <tr><td>Recolecci&oacute;n</td><td>400 - 600</td><td>500 - 800</td></tr>
+                            <tr><td>Seguros y otros</td><td>150 - 250</td><td>200 - 350</td></tr>
+                            <tr><td class="td-variety">Total aproximado</td><td class="td-variety">1.450 - 2.300</td><td class="td-variety">2.450 - 4.150</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="../" class="header__logo">
+                    <svg class="header__icon" viewBox="0 0 32 32" fill="none"><ellipse cx="16" cy="16" rx="10" ry="14" fill="#C8A96E" stroke="#8B6914" stroke-width="1.5"/><ellipse cx="16" cy="16" rx="6" ry="10" fill="#DFC08A"/><line x1="16" y1="3" x2="16" y2="29" stroke="#8B6914" stroke-width="1"/></svg>
+                    <span>PrecioAlmendra</span>
+                </a>
+                <p class="footer__desc">Cotizaciones actualizadas de almendra de las principales lonjas espa&ntilde;olas.</p>
+            </div>
+            <div class="footer__links">
+                <h4>Lonjas</h4>
+                <a href="lonja-albacete.html">Lonja de Albacete</a>
+                <a href="lonja-murcia.html">Lonja de Murcia</a>
+                <a href="lonja-reus.html">Lonja de Reus</a>
+                <a href="lonja-cordoba.html">Lonja de C&oacute;rdoba</a>
+            </div>
+            <div class="footer__links">
+                <h4>Herramientas</h4>
+                <a href="calculadora.html">Calculadora de rentabilidad</a>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>&copy; 2026 PrecioAlmendra. Los precios mostrados son orientativos y proceden de las lonjas oficiales.</p>
+        </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>

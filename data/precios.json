@@ -1,0 +1,70 @@
+{
+    "lastUpdate": "2026-02-14T10:00:00.000Z",
+    "source": "Lonjas oficiales de España",
+    "lonjas": {
+        "albacete": {
+            "cotizaciones": [
+                { "fecha": "2026-02-13", "precios": { "comuna": 5.55, "marcona": 7.30, "largueta": 6.10, "guara": 5.75 } },
+                { "fecha": "2026-01-16", "precios": { "comuna": 5.50, "marcona": 7.20, "largueta": 6.05, "guara": 5.70 } },
+                { "fecha": "2025-12-12", "precios": { "comuna": 5.60, "marcona": 7.35, "largueta": 6.15, "guara": 5.80 } },
+                { "fecha": "2025-11-14", "precios": { "comuna": 5.75, "marcona": 7.50, "largueta": 6.30, "guara": 5.95 } },
+                { "fecha": "2025-10-16", "precios": { "comuna": 5.90, "marcona": 7.70, "largueta": 6.50, "guara": 6.10 } },
+                { "fecha": "2025-09-18", "precios": { "comuna": 6.10, "marcona": 7.90, "largueta": 6.70, "guara": 6.30 } },
+                { "fecha": "2025-08-14", "precios": { "comuna": 5.80, "marcona": 7.60, "largueta": 6.40, "guara": 6.00 } },
+                { "fecha": "2025-07-17", "precios": { "comuna": 5.25, "marcona": 7.10, "largueta": 5.85, "guara": 5.45 } },
+                { "fecha": "2025-06-12", "precios": { "comuna": 5.05, "marcona": 6.80, "largueta": 5.65, "guara": 5.25 } },
+                { "fecha": "2025-05-15", "precios": { "comuna": 5.10, "marcona": 6.85, "largueta": 5.70, "guara": 5.30 } },
+                { "fecha": "2025-04-17", "precios": { "comuna": 5.15, "marcona": 6.90, "largueta": 5.75, "guara": 5.35 } },
+                { "fecha": "2025-03-13", "precios": { "comuna": 5.20, "marcona": 7.00, "largueta": 5.80, "guara": 5.40 } }
+            ]
+        },
+        "murcia": {
+            "cotizaciones": [
+                { "fecha": "2026-02-13", "precios": { "comuna": 5.45, "marcona": 7.20, "largueta": 6.00, "guara": 5.65 } },
+                { "fecha": "2026-01-16", "precios": { "comuna": 5.40, "marcona": 7.10, "largueta": 5.95, "guara": 5.60 } },
+                { "fecha": "2025-12-12", "precios": { "comuna": 5.50, "marcona": 7.25, "largueta": 6.05, "guara": 5.70 } },
+                { "fecha": "2025-11-14", "precios": { "comuna": 5.65, "marcona": 7.40, "largueta": 6.20, "guara": 5.85 } },
+                { "fecha": "2025-10-16", "precios": { "comuna": 5.80, "marcona": 7.60, "largueta": 6.40, "guara": 6.00 } },
+                { "fecha": "2025-09-18", "precios": { "comuna": 6.00, "marcona": 7.80, "largueta": 6.60, "guara": 6.20 } },
+                { "fecha": "2025-08-14", "precios": { "comuna": 5.70, "marcona": 7.50, "largueta": 6.30, "guara": 5.90 } },
+                { "fecha": "2025-07-17", "precios": { "comuna": 5.15, "marcona": 7.00, "largueta": 5.75, "guara": 5.35 } },
+                { "fecha": "2025-06-12", "precios": { "comuna": 4.95, "marcona": 6.70, "largueta": 5.55, "guara": 5.15 } },
+                { "fecha": "2025-05-15", "precios": { "comuna": 5.00, "marcona": 6.75, "largueta": 5.60, "guara": 5.20 } },
+                { "fecha": "2025-04-17", "precios": { "comuna": 5.05, "marcona": 6.80, "largueta": 5.65, "guara": 5.25 } },
+                { "fecha": "2025-03-13", "precios": { "comuna": 5.10, "marcona": 6.90, "largueta": 5.70, "guara": 5.30 } }
+            ]
+        },
+        "reus": {
+            "cotizaciones": [
+                { "fecha": "2026-02-13", "precios": { "comuna": 5.65, "marcona": 7.40, "largueta": 6.20, "guara": 5.85 } },
+                { "fecha": "2026-01-16", "precios": { "comuna": 5.60, "marcona": 7.30, "largueta": 6.15, "guara": 5.80 } },
+                { "fecha": "2025-12-12", "precios": { "comuna": 5.70, "marcona": 7.45, "largueta": 6.25, "guara": 5.90 } },
+                { "fecha": "2025-11-14", "precios": { "comuna": 5.85, "marcona": 7.60, "largueta": 6.40, "guara": 6.05 } },
+                { "fecha": "2025-10-16", "precios": { "comuna": 6.00, "marcona": 7.80, "largueta": 6.60, "guara": 6.20 } },
+                { "fecha": "2025-09-18", "precios": { "comuna": 6.20, "marcona": 8.00, "largueta": 6.80, "guara": 6.40 } },
+                { "fecha": "2025-08-14", "precios": { "comuna": 5.90, "marcona": 7.70, "largueta": 6.50, "guara": 6.10 } },
+                { "fecha": "2025-07-17", "precios": { "comuna": 5.35, "marcona": 7.20, "largueta": 5.95, "guara": 5.55 } },
+                { "fecha": "2025-06-12", "precios": { "comuna": 5.15, "marcona": 6.90, "largueta": 5.75, "guara": 5.35 } },
+                { "fecha": "2025-05-15", "precios": { "comuna": 5.20, "marcona": 6.95, "largueta": 5.80, "guara": 5.40 } },
+                { "fecha": "2025-04-17", "precios": { "comuna": 5.25, "marcona": 7.00, "largueta": 5.85, "guara": 5.45 } },
+                { "fecha": "2025-03-13", "precios": { "comuna": 5.30, "marcona": 7.10, "largueta": 5.90, "guara": 5.50 } }
+            ]
+        },
+        "cordoba": {
+            "cotizaciones": [
+                { "fecha": "2026-02-13", "precios": { "comuna": 5.40, "marcona": 7.10, "largueta": 5.95, "guara": 5.60 } },
+                { "fecha": "2026-01-16", "precios": { "comuna": 5.35, "marcona": 7.00, "largueta": 5.90, "guara": 5.55 } },
+                { "fecha": "2025-12-12", "precios": { "comuna": 5.45, "marcona": 7.15, "largueta": 6.00, "guara": 5.65 } },
+                { "fecha": "2025-11-14", "precios": { "comuna": 5.60, "marcona": 7.30, "largueta": 6.15, "guara": 5.80 } },
+                { "fecha": "2025-10-16", "precios": { "comuna": 5.75, "marcona": 7.50, "largueta": 6.35, "guara": 5.95 } },
+                { "fecha": "2025-09-18", "precios": { "comuna": 5.95, "marcona": 7.70, "largueta": 6.55, "guara": 6.15 } },
+                { "fecha": "2025-08-14", "precios": { "comuna": 5.65, "marcona": 7.40, "largueta": 6.25, "guara": 5.85 } },
+                { "fecha": "2025-07-17", "precios": { "comuna": 5.10, "marcona": 6.90, "largueta": 5.70, "guara": 5.30 } },
+                { "fecha": "2025-06-12", "precios": { "comuna": 4.90, "marcona": 6.60, "largueta": 5.50, "guara": 5.10 } },
+                { "fecha": "2025-05-15", "precios": { "comuna": 4.95, "marcona": 6.65, "largueta": 5.55, "guara": 5.15 } },
+                { "fecha": "2025-04-17", "precios": { "comuna": 5.00, "marcona": 6.70, "largueta": 5.60, "guara": 5.20 } },
+                { "fecha": "2025-03-13", "precios": { "comuna": 5.05, "marcona": 6.80, "largueta": 5.65, "guara": 5.25 } }
+            ]
+        }
+    }
+}

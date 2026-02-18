@@ -1,0 +1,16 @@
+{
+    "name": "precioalmendra-scraper",
+    "version": "1.0.0",
+    "description": "Scraper de precios de almendra de lonjas españolas",
+    "type": "module",
+    "scripts": {
+        "scrape": "node scraper.js",
+        "scrape:test": "node scraper.js --dry-run",
+        "build": "node build.js",
+        "update": "node scraper.js && node build.js"
+    },
+    "dependencies": {
+        "cheerio": "^1.0.0",
+        "node-fetch": "^3.3.2"
+    }
+}

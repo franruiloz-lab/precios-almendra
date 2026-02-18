@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precio Almendra Hoy - Cotizaciones en Tiempo Real de las Lonjas Espa&ntilde;olas</title>
+    <meta name="description" content="Consulta el precio de la almendra hoy en las principales lonjas de Espa&ntilde;a: Albacete, Murcia, Reus y C&oacute;rdoba. Gr&aacute;ficos hist&oacute;ricos, comparador de precios y calculadora de rentabilidad.">
+    <meta name="keywords" content="precio almendra, precio almendra hoy, cotizacion almendra, lonja albacete, lonja murcia, lonja reus, precio almendra marcona">
+    <link rel="canonical" href="https://precioalmendra.com/">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1B5E20">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="/" class="header__logo">
+                <svg class="header__icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="16" cy="16" rx="10" ry="14" fill="#C8A96E" stroke="#8B6914" stroke-width="1.5"/>
+                    <ellipse cx="16" cy="16" rx="6" ry="10" fill="#DFC08A"/>
+                    <line x1="16" y1="3" x2="16" y2="29" stroke="#8B6914" stroke-width="1"/>
+                </svg>
+                <span>PrecioAlmendra</span>
+            </a>
+            <nav class="header__nav" id="mainNav">
+                <a href="/" class="header__link header__link--active">Inicio</a>
+                <a href="pages/lonja-albacete.html" class="header__link">Albacete</a>
+                <a href="pages/lonja-murcia.html" class="header__link">Murcia</a>
+                <a href="pages/lonja-reus.html" class="header__link">Reus</a>
+                <a href="pages/lonja-cordoba.html" class="header__link">C&oacute;rdoba</a>
+                <a href="pages/calculadora.html" class="header__link">Calculadora</a>
+            </nav>
+            <div class="header__actions">
+                <button class="btn-icon" id="themeToggle" aria-label="Cambiar tema">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <button class="btn-hamburger" id="menuToggle" aria-label="Men&uacute;">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero__title">Precio de la Almendra Hoy</h1>
+                <p class="hero__subtitle">Cotizaciones actualizadas de las principales lonjas de Espa&ntilde;a</p>
+                <div class="hero__date">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    <span id="lastUpdate">Cargando...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard de precios -->
+        <section class="section">
+            <div class="container">
+                <div class="price-grid" id="priceCards">
+                    <!-- Cards generadas por JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparador visual -->
+        <section class="section section--alt">
+            <div class="container">
+                <h2 class="section__title">Comparador de Lonjas</h2>
+                <p class="section__subtitle">Compara la evoluci&oacute;n de precios entre lonjas de un vistazo</p>
+                <div class="chart-container">
+                    <div class="chart-controls">
+                        <button class="chip chip--active" data-range="3m">3 meses</button>
+                        <button class="chip" data-range="6m">6 meses</button>
+                        <button class="chip" data-range="1y">1 a&ntilde;o</button>
+                        <button class="chip" data-range="all">Todo</button>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="comparadorChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabla resumen -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section__title">Cotizaciones por Variedad</h2>
+                <p class="section__subtitle">Precios actuales en &euro;/kg seg&uacute;n variedad y lonja</p>
+                <div class="table-responsive">
+                    <table class="data-table" id="varietyTable">
+                        <thead>
+                            <tr>
+                                <th>Variedad</th>
+                                <th>Albacete</th>
+                                <th>Murcia</th>
+                                <th>Reus</th>
+                                <th>C&oacute;rdoba</th>
+                                <th>Media</th>
+                                <th>Tendencia</th>
+                            </tr>
+                        </thead>
+                        <tbody id="varietyTableBody">
+                            <!-- Generado por JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculadora r&aacute;pida -->
+        <section class="section section--alt">
+            <div class="container">
+                <h2 class="section__title">Calculadora R&aacute;pida de Rentabilidad</h2>
+                <p class="section__subtitle">Estima tus ingresos seg&uacute;n el precio actual</p>
+                <div class="calc-quick">
+                    <div class="calc-quick__inputs">
+                        <div class="form-group">
+                            <label for="calcHectareas">Hect&aacute;reas</label>
+                            <input type="number" id="calcHectareas" value="5" min="0.1" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label for="calcRendimiento">Rendimiento (kg/ha)</label>
+                            <input type="number" id="calcRendimiento" value="2000" min="100" step="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="calcVariedad">Variedad</label>
+                            <select id="calcVariedad">
+                                <option value="comuna">Comuna</option>
+                                <option value="marcona">Marcona</option>
+                                <option value="largueta">Largueta</option>
+                                <option value="guara">Guara</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="calcLonja">Lonja</label>
+                            <select id="calcLonja">
+                                <option value="albacete">Albacete</option>
+                                <option value="murcia">Murcia</option>
+                                <option value="reus">Reus</option>
+                                <option value="cordoba">C&oacute;rdoba</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="calc-quick__result" id="calcResult">
+                        <div class="calc-result__label">Ingresos estimados</div>
+                        <div class="calc-result__value" id="calcIngresos">--</div>
+                        <div class="calc-result__detail" id="calcDetail">Selecciona tus datos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tendencias -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section__title">Tendencia del Mercado</h2>
+                <p class="section__subtitle">An&aacute;lisis de la evoluci&oacute;n reciente del precio de la almendra</p>
+                <div class="trend-cards" id="trendCards">
+                    <!-- Generado por JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Alertas -->
+        <section class="section section--cta">
+            <div class="container">
+                <div class="cta-box">
+                    <h2 class="cta-box__title">Recibe alertas de precio</h2>
+                    <p class="cta-box__text">Te avisamos cuando el precio suba o baje de tu umbral. Sin spam, solo datos &uacute;tiles.</p>
+                    <form class="cta-box__form" id="alertForm">
+                        <input type="email" placeholder="Tu email" required class="input">
+                        <button type="submit" class="btn btn--primary">Activar alertas</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SEO -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section__title">Preguntas Frecuentes</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-item__question">&iquest;Cu&aacute;l es el precio de la almendra hoy?</summary>
+                        <p class="faq-item__answer" id="faqPrecioHoy">El precio actual de la almendra var&iacute;a seg&uacute;n la lonja y la variedad. Consulta nuestro comparador actualizado en la parte superior de esta p&aacute;gina para ver las cotizaciones m&aacute;s recientes de Albacete, Murcia, Reus y C&oacute;rdoba.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">&iquest;C&oacute;mo se determina el precio de la almendra en las lonjas?</summary>
+                        <p class="faq-item__answer">El precio de la almendra en las lonjas se establece mediante un sistema de negociaci&oacute;n entre compradores y vendedores. Los factores que influyen incluyen la oferta y demanda, la calidad de la cosecha, los precios internacionales (especialmente California) y las condiciones clim&aacute;ticas.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">&iquest;Cu&aacute;l es la mejor lonja para vender almendra?</summary>
+                        <p class="faq-item__answer">No hay una lonja universalmente mejor. Los precios var&iacute;an seg&uacute;n la semana y la variedad. Usa nuestro comparador para ver qu&eacute; lonja ofrece mejor precio en cada momento para tu variedad espec&iacute;fica.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">&iquest;Cu&aacute;nto pagan por kilo de almendra al agricultor?</summary>
+                        <p class="faq-item__answer">El precio que recibe el agricultor depende de la variedad, calidad y lonja de referencia. Los precios en lonja son orientativos; el precio final al agricultor suele ser ligeramente inferior tras descontar costes de intermediaci&oacute;n y transporte.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">&iquest;Cu&aacute;l es el futuro del precio de la almendra?</summary>
+                        <p class="faq-item__answer">Las previsiones dependen de m&uacute;ltiples factores: producci&oacute;n en California, demanda asi&aacute;tica, condiciones clim&aacute;ticas en el Mediterr&aacute;neo y costes de producci&oacute;n. Consulta nuestra secci&oacute;n de tendencias para un an&aacute;lisis actualizado del mercado.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="/" class="header__logo">
+                    <svg class="header__icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="16" cy="16" rx="10" ry="14" fill="#C8A96E" stroke="#8B6914" stroke-width="1.5"/>
+                        <ellipse cx="16" cy="16" rx="6" ry="10" fill="#DFC08A"/>
+                        <line x1="16" y1="3" x2="16" y2="29" stroke="#8B6914" stroke-width="1"/>
+                    </svg>
+                    <span>PrecioAlmendra</span>
+                </a>
+                <p class="footer__desc">Cotizaciones actualizadas de almendra de las principales lonjas espa&ntilde;olas. Informaci&oacute;n para el agricultor.</p>
+            </div>
+            <div class="footer__links">
+                <h4>Lonjas</h4>
+                <a href="pages/lonja-albacete.html">Lonja de Albacete</a>
+                <a href="pages/lonja-murcia.html">Lonja de Murcia</a>
+                <a href="pages/lonja-reus.html">Lonja de Reus</a>
+                <a href="pages/lonja-cordoba.html">Lonja de C&oacute;rdoba</a>
+            </div>
+            <div class="footer__links">
+                <h4>Herramientas</h4>
+                <a href="pages/calculadora.html">Calculadora de rentabilidad</a>
+                <a href="#comparador">Comparador de lonjas</a>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>&copy; 2026 PrecioAlmendra. Los precios mostrados son orientativos y proceden de las lonjas oficiales.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

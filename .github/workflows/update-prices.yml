@@ -1,0 +1,58 @@
+name: Actualizar Precios Almendra
+
+# Se ejecuta automáticamente:
+#   - Todos los días a las 14:00 UTC (15:00/16:00 hora España)
+#   - Horario elegido porque las lonjas sesionan por la mañana (~12:00h):
+#     · Albacete: jueves a las 12:00h
+#     · Reus: lunes por la mañana
+#     · Murcia/Córdoba: días variables
+#   - A las 14:00 UTC ya se han publicado las cotizaciones del día
+#   - Si no hay datos nuevos, el workflow no hace commit (idempotente)
+#   - También se puede lanzar manualmente desde GitHub
+on:
+  schedule:
+    - cron: '0 12 * * *'  # 12:00 UTC (13:00/14:00 hora España) - captura publicaciones tempranas
+    - cron: '0 14 * * *'  # 14:00 UTC (15:00/16:00 hora España) - captura publicaciones tardías
+  workflow_dispatch: # Permite ejecución manual
+
+jobs:
+  scrape-and-build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias del scraper
+        working-directory: scripts
+        run: npm install
+
+      - name: Ejecutar scraper
+        working-directory: scripts
+        run: node scraper.js
+        continue-on-error: true
+
+      - name: Ejecutar build (pre-renderizar datos en JS)
+        working-directory: scripts
+        run: node build.js
+
+      - name: Comprobar si hay cambios
+        id: check_changes
+        run: |
+          git diff --quiet data/precios.json js/data.js || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit y push si hay datos nuevos
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/precios.json js/data.js
+          git commit -m "Actualizar precios almendra $(date +'%d/%m/%Y')"
+          git push

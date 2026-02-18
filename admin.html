@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Actualizar Precios</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .admin-header { background: #C62828; color: #fff; padding: 16px; text-align: center; font-weight: 700; }
+        .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .admin-card { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 20px; }
+        .admin-card h3 { margin-bottom: 16px; color: var(--color-primary); }
+        .price-input-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+        .price-input-row label { flex: 0 0 80px; font-size: 0.85rem; font-weight: 500; }
+        .price-input-row input { flex: 1; padding: 8px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.95rem; background: var(--color-bg); color: var(--color-text); }
+        .btn-save { width: 100%; padding: 12px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--radius-sm); font-weight: 600; font-size: 0.95rem; cursor: pointer; margin-top: 12px; }
+        .btn-save:hover { opacity: 0.9; }
+        .json-output { background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 20px; margin-top: 24px; }
+        .json-output textarea { width: 100%; height: 300px; font-family: monospace; font-size: 0.8rem; background: var(--color-bg); color: var(--color-text); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px; resize: vertical; }
+        .btn-copy { padding: 10px 20px; background: #1565C0; color: #fff; border: none; border-radius: var(--radius-sm); font-weight: 600; cursor: pointer; margin-top: 8px; }
+        .btn-download { padding: 10px 20px; background: #2E7D32; color: #fff; border: none; border-radius: var(--radius-sm); font-weight: 600; cursor: pointer; margin-top: 8px; margin-left: 8px; }
+        .status-msg { padding: 12px; border-radius: var(--radius-sm); margin-top: 16px; font-weight: 500; display: none; }
+        .status-msg--ok { display: block; background: rgba(46,125,50,0.1); color: #2E7D32; }
+    </style>
+</head>
+<body>
+    <div class="admin-header">PANEL ADMIN - Actualizar Precios de Almendra (no indexado)</div>
+
+    <main class="section">
+        <div class="container">
+            <h1 class="section__title">Actualizar Cotizaciones</h1>
+            <p class="section__subtitle">Introduce los precios de las lonjas para esta semana. Al guardar, se genera el JSON que debes copiar a <code>data/precios.json</code></p>
+
+            <div class="form-group mt-16" style="max-width:220px;">
+                <label for="adminFecha">Fecha de cotizaci&oacute;n</label>
+                <input type="date" id="adminFecha" value="">
+            </div>
+
+            <div class="admin-grid mt-24" id="adminForms">
+                <!-- Generado por JS -->
+            </div>
+
+            <button class="btn-save mt-24" id="btnGenerate" style="max-width:300px;">Generar JSON actualizado</button>
+
+            <div class="status-msg" id="statusMsg"></div>
+
+            <div class="json-output" id="jsonOutput" style="display:none;">
+                <h3>JSON Generado</h3>
+                <p class="section__subtitle">Copia este JSON y p&eacute;galo en <code>data/precios.json</code>, o desc&aacute;rgalo directamente.</p>
+                <textarea id="jsonText" readonly></textarea>
+                <button class="btn-copy" id="btnCopy">Copiar al portapapeles</button>
+                <button class="btn-download" id="btnDownload">Descargar precios.json</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const LONJAS = ['albacete', 'murcia', 'reus', 'cordoba'];
+        const LONJAS_NOMBRES = { albacete: 'Albacete', murcia: 'Murcia', reus: 'Reus', cordoba: 'Córdoba' };
+        const VARIEDADES = ['comuna', 'marcona', 'largueta', 'guara'];
+
+        // Cargar datos existentes
+        let existingData = null;
+
+        async function loadExisting() {
+            try {
+                const resp = await fetch('data/precios.json');
+                if (resp.ok) existingData = await resp.json();
+            } catch (e) { console.log('No existing data'); }
+        }
+
+        function initAdmin() {
+            // Set fecha a hoy
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('adminFecha').value = today;
+
+            const container = document.getElementById('adminForms');
+
+            for (const lonja of LONJAS) {
+                const card = document.createElement('div');
+                card.className = 'admin-card';
+
+                let html = `<h3>${LONJAS_NOMBRES[lonja]}</h3>`;
+                for (const v of VARIEDADES) {
+                    // Intentar prellenar con último precio conocido
+                    let lastPrice = '';
+                    if (existingData?.lonjas?.[lonja]?.cotizaciones?.[0]?.precios?.[v]) {
+                        lastPrice = existingData.lonjas[lonja].cotizaciones[0].precios[v];
+                    }
+                    html += `
+                        <div class="price-input-row">
+                            <label>${v.charAt(0).toUpperCase() + v.slice(1)}</label>
+                            <input type="number" step="0.01" min="0" max="15"
+                                   id="price_${lonja}_${v}"
+                                   value="${lastPrice}"
+                                   placeholder="€/kg">
+                        </div>
+                    `;
+                }
+                card.innerHTML = html;
+                container.appendChild(card);
+            }
+        }
+
+        function generateJSON() {
+            const fecha = document.getElementById('adminFecha').value;
+            if (!fecha) { alert('Introduce una fecha'); return; }
+
+            // Partir de datos existentes o crear nuevos
+            const data = existingData || {
+                lastUpdate: null,
+                source: 'Lonjas oficiales de España',
+                lonjas: {}
+            };
+
+            data.lastUpdate = new Date().toISOString();
+
+            for (const lonja of LONJAS) {
+                if (!data.lonjas[lonja]) data.lonjas[lonja] = { cotizaciones: [] };
+
+                const precios = {};
+                let hasAny = false;
+
+                for (const v of VARIEDADES) {
+                    const input = document.getElementById(`price_${lonja}_${v}`);
+                    const val = parseFloat(input?.value);
+                    if (!isNaN(val) && val > 0) {
+                        precios[v] = val;
+                        hasAny = true;
+                    }
+                }
+
+                if (hasAny) {
+                    // Comprobar si ya existe esta fecha
+                    const existingIdx = data.lonjas[lonja].cotizaciones.findIndex(c => c.fecha === fecha);
+                    if (existingIdx >= 0) {
+                        data.lonjas[lonja].cotizaciones[existingIdx].precios = {
+                            ...data.lonjas[lonja].cotizaciones[existingIdx].precios,
+                            ...precios
+                        };
+                    } else {
+                        data.lonjas[lonja].cotizaciones.unshift({ fecha, precios });
+                    }
+
+                    // Ordenar por fecha desc
+                    data.lonjas[lonja].cotizaciones.sort((a, b) => b.fecha.localeCompare(a.fecha));
+                }
+            }
+
+            const jsonStr = JSON.stringify(data, null, 2);
+            document.getElementById('jsonText').value = jsonStr;
+            document.getElementById('jsonOutput').style.display = 'block';
+
+            const msg = document.getElementById('statusMsg');
+            msg.className = 'status-msg status-msg--ok';
+            msg.textContent = 'JSON generado. Cópialo a data/precios.json o descárgalo.';
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadExisting();
+            initAdmin();
+
+            document.getElementById('btnGenerate').addEventListener('click', generateJSON);
+
+            document.getElementById('btnCopy').addEventListener('click', () => {
+                const text = document.getElementById('jsonText');
+                text.select();
+                navigator.clipboard.writeText(text.value);
+                document.getElementById('btnCopy').textContent = '¡Copiado!';
+                setTimeout(() => document.getElementById('btnCopy').textContent = 'Copiar al portapapeles', 2000);
+            });
+
+            document.getElementById('btnDownload').addEventListener('click', () => {
+                const text = document.getElementById('jsonText').value;
+                const blob = new Blob([text], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'precios.json';
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        });
+    </script>
+</body>
+</html>
