@@ -365,11 +365,12 @@ function initAlertForm() {
         btn.textContent = 'Enviando...';
 
         try {
+            const formData = new FormData();
+            formData.append('email', email);
             await fetch('https://script.google.com/macros/s/AKfycbwzSojaVtFRsyC_mFKlCUg5mjAZCqZP3k24P5dl71dbtyqcKLkGAahl1O202YhbVE_8iQ/exec', {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email })
+                body: formData
             });
             e.target.innerHTML = '<p style="font-size:1.1rem;font-weight:600;">&#10003; ¡Registrado! Te avisaremos de cambios importantes.</p>';
         } catch (err) {
