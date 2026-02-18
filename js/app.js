@@ -354,11 +354,28 @@ function initTrends() {
    ALERT FORM
    ============================================ */
 function initAlertForm() {
-    document.getElementById('alertForm')?.addEventListener('submit', (e) => {
+    document.getElementById('alertForm')?.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const email = e.target.querySelector('input[type="email"]').value;
-        if (email) {
-            e.target.innerHTML = '<p style="font-size:1.1rem;font-weight:600;">&#10003; ¡Alertas activadas! Te avisaremos de cambios importantes.</p>';
+        const input = e.target.querySelector('input[type="email"]');
+        const btn = e.target.querySelector('button');
+        const email = input.value.trim();
+        if (!email) return;
+
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+
+        try {
+            await fetch('https://script.google.com/macros/s/AKfycbwzSojaVtFRsyC_mFKlCUg5mjAZCqZP3k24P5dl71dbtyqcKLkGAahl1O202YhbVE_8iQ/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            e.target.innerHTML = '<p style="font-size:1.1rem;font-weight:600;">&#10003; ¡Registrado! Te avisaremos de cambios importantes.</p>';
+        } catch (err) {
+            btn.disabled = false;
+            btn.textContent = 'Activar alertas';
+            input.value = email;
         }
     });
 }
