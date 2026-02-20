@@ -1,0 +1,50 @@
+name: Actualizar precios almendra
+
+on:
+  schedule:
+    # Jueves a las 19:00 UTC (20:00 hora espa&ntilde;ola)
+    # Las lonjas publican datos los jueves
+    - cron: '0 19 * * 4'
+  workflow_dispatch: # Permite ejecuci&oacute;n manual desde GitHub
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        working-directory: scripts
+        run: npm install
+
+      - name: Crear directorio data
+        run: mkdir -p data
+
+      - name: Ejecutar scraper
+        working-directory: scripts
+        run: node scraper.js
+
+      - name: Ejecutar build (actualizar data.js)
+        working-directory: scripts
+        run: node build.js
+
+      - name: Commit y push si hay cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ js/data.js
+          if git diff --staged --quiet; then
+            echo "No hay cambios en los datos"
+          else
+            git commit -m "Actualizar precios almendra $(date +'%d/%m/%Y')"
+            git push
+          fi
