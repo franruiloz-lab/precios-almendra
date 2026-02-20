@@ -5,29 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Precio Almendra Lonja de Córdoba - Cotizaciones Actualizadas</title>
     <meta name="description" content="Precio de la almendra en la Lonja de Córdoba. Cotizaciones actualizadas por variedad: Marcona, Comuna, Largueta y Guara. Gráficos históricos y evolución.">
-    <link rel="canonical" href="https://precioalmendra.com/pages/lonja-cordoba.html">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="canonical" href="https://mercadoalmendra.com/lonja/cordoba/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#1B5E20">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Precio Almendra Lonja de Córdoba - Cotizaciones Actualizadas">
+    <meta property="og:description" content="Precio de la almendra en la Lonja de Córdoba. Cotizaciones actualizadas por variedad: Marcona, Comuna, Largueta y Guara. Gráficos históricos y evolución.">
+    <meta property="og:url" content="https://mercadoalmendra.com/lonja/cordoba/">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="MercadoAlmendra">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Precio Almendra Lonja de Córdoba - Cotizaciones Actualizadas">
+    <meta name="twitter:description" content="Precio de la almendra en la Lonja de Córdoba. Cotizaciones actualizadas por variedad: Marcona, Comuna, Largueta y Guara. Gráficos históricos y evolución.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <header class="header">
         <div class="container header__inner">
-            <a href="../" class="header__logo">
+            <a href="/" class="header__logo">
                 <svg class="header__icon" viewBox="0 0 32 32" fill="none"><ellipse cx="16" cy="16" rx="10" ry="14" fill="#C8A96E" stroke="#8B6914" stroke-width="1.5"/><ellipse cx="16" cy="16" rx="6" ry="10" fill="#DFC08A"/><line x1="16" y1="3" x2="16" y2="29" stroke="#8B6914" stroke-width="1"/></svg>
-                <span>PrecioAlmendra</span>
+                <span>MercadoAlmendra</span>
             </a>
             <nav class="header__nav" id="mainNav">
-                <a href="../" class="header__link">Inicio</a>
-                <a href="lonja-albacete.html" class="header__link">Albacete</a>
-                <a href="lonja-murcia.html" class="header__link">Murcia</a>
-                <a href="lonja-reus.html" class="header__link">Reus</a>
-                <a href="lonja-cordoba.html" class="header__link header__link--active">C&oacute;rdoba</a>
-                <a href="calculadora.html" class="header__link">Calculadora</a>
+                <a href="/" class="header__link">Inicio</a>
+                <a href="/lonja/albacete/" class="header__link">Albacete</a>
+                <a href="/lonja/murcia/" class="header__link">Murcia</a>
+                <a href="/lonja/reus/" class="header__link">Reus</a>
+                <a href="/lonja/cordoba/" class="header__link header__link--active">C&oacute;rdoba</a>
+                <a href="/calculadora/" class="header__link">Calculadora</a>
             </nav>
             <div class="header__actions">
                 <button class="btn-icon" id="themeToggle" aria-label="Cambiar tema">
@@ -38,34 +48,31 @@
             </div>
         </div>
     </header>
-
     <main>
         <div class="breadcrumb container">
-            <a href="../">Inicio</a><span>/</span>Lonja de Córdoba
+            <a href="/">Inicio</a><span>/</span>Lonja de C&oacute;rdoba
         </div>
-
         <section class="lonja-hero">
             <div class="container">
-                <h1 class="lonja-hero__name">Lonja de Córdoba</h1>
-                <p class="lonja-hero__region">Andalucía &middot; Cotizaciones actualizadas</p>
+                <h1 class="lonja-hero__name">Lonja de C&oacute;rdoba</h1>
+                <p class="lonja-hero__region">Andaluc&iacute;a &middot; Cotizaciones actualizadas</p>
                 <div class="lonja-hero__stats" id="lonjaVarietyCards" data-lonja="cordoba">
-                    <!-- Generado por JS -->
                 </div>
             </div>
         </section>
-
         <section class="section">
             <div class="container">
                 <h2 class="section__title">Evoluci&oacute;n de Precios</h2>
                 <p class="section__subtitle">Precio por variedad en los &uacute;ltimos 12 meses (&euro;/kg pepita)</p>
                 <div class="chart-container">
                     <div class="chart-wrapper">
-                        <canvas id="lonjaChart" data-lonja="cordoba"></canvas>
+                        <canvas id="lonjaChart" data-lonja="cordoba">
+                            <p>Gr&aacute;fico de evoluci&oacute;n de precios de almendra en la Lonja de C&oacute;rdoba.</p>
+                        </canvas>
                     </div>
                 </div>
             </div>
         </section>
-
         <section class="section section--alt">
             <div class="container">
                 <h2 class="section__title">Hist&oacute;rico de Cotizaciones</h2>
@@ -74,11 +81,11 @@
                     <table class="data-table history-table">
                         <thead>
                             <tr>
-                                <th>Mes</th>
-                                <th>Comuna</th>
-                                <th>Marcona</th>
-                                <th>Largueta</th>
-                                <th>Guara</th>
+                                <th scope="col">Mes</th>
+                                <th scope="col">Comuna</th>
+                                <th scope="col">Marcona</th>
+                                <th scope="col">Largueta</th>
+                                <th scope="col">Guara</th>
                             </tr>
                         </thead>
                         <tbody id="lonjaHistoryBody" data-lonja="cordoba"></tbody>
@@ -86,7 +93,6 @@
                 </div>
             </div>
         </section>
-
         <section class="section">
             <div class="container">
                 <h2 class="section__title">Sobre la Lonja de C&oacute;rdoba</h2>
@@ -95,34 +101,32 @@
             </div>
         </section>
     </main>
-
     <footer class="footer">
         <div class="container footer__inner">
             <div class="footer__brand">
-                <a href="../" class="header__logo">
+                <a href="/" class="header__logo">
                     <svg class="header__icon" viewBox="0 0 32 32" fill="none"><ellipse cx="16" cy="16" rx="10" ry="14" fill="#C8A96E" stroke="#8B6914" stroke-width="1.5"/><ellipse cx="16" cy="16" rx="6" ry="10" fill="#DFC08A"/><line x1="16" y1="3" x2="16" y2="29" stroke="#8B6914" stroke-width="1"/></svg>
-                    <span>PrecioAlmendra</span>
+                    <span>MercadoAlmendra</span>
                 </a>
                 <p class="footer__desc">Cotizaciones actualizadas de almendra de las principales lonjas espa&ntilde;olas.</p>
             </div>
             <div class="footer__links">
                 <h4>Lonjas</h4>
-                <a href="lonja-albacete.html">Lonja de Albacete</a>
-                <a href="lonja-murcia.html">Lonja de Murcia</a>
-                <a href="lonja-reus.html">Lonja de Reus</a>
-                <a href="lonja-cordoba.html">Lonja de C&oacute;rdoba</a>
+                <a href="/lonja/albacete/">Lonja de Albacete</a>
+                <a href="/lonja/murcia/">Lonja de Murcia</a>
+                <a href="/lonja/reus/">Lonja de Reus</a>
+                <a href="/lonja/cordoba/">Lonja de C&oacute;rdoba</a>
             </div>
             <div class="footer__links">
                 <h4>Herramientas</h4>
-                <a href="calculadora.html">Calculadora de rentabilidad</a>
+                <a href="/calculadora/">Calculadora de rentabilidad</a>
             </div>
         </div>
         <div class="container footer__bottom">
-            <p>&copy; 2026 PrecioAlmendra. Los precios mostrados son orientativos y proceden de las lonjas oficiales.</p>
+            <p>&copy; 2026 MercadoAlmendra. Los precios mostrados son orientativos y proceden de las lonjas oficiales.</p>
         </div>
     </footer>
-
-    <script src="../js/data.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

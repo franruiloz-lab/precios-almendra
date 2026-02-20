@@ -10,7 +10,7 @@ const LONJAS = {
         nombreCompleto: 'Lonja de Albacete',
         region: 'Castilla-La Mancha',
         color: '#2E7D32',
-        url: 'pages/lonja-albacete.html',
+        url: '/lonja/albacete/',
         descripcion: 'La Lonja Agropecuaria de Albacete es una de las principales referencias para la cotización de almendra en España, especialmente para las variedades cultivadas en Castilla-La Mancha.'
     },
     murcia: {
@@ -18,7 +18,7 @@ const LONJAS = {
         nombreCompleto: 'Lonja de Murcia',
         region: 'Región de Murcia',
         color: '#1565C0',
-        url: 'pages/lonja-murcia.html',
+        url: '/lonja/murcia/',
         descripcion: 'La Lonja de Murcia cubre una de las zonas con mayor producción de almendra de España, siendo referencia clave para el sureste peninsular.'
     },
     reus: {
@@ -26,7 +26,7 @@ const LONJAS = {
         nombreCompleto: 'Lonja de Reus',
         region: 'Cataluña (Tarragona)',
         color: '#E65100',
-        url: 'pages/lonja-reus.html',
+        url: '/lonja/reus/',
         descripcion: 'La Lonja de Reus es la referencia histórica del mercado de frutos secos en España, con una tradición que se remonta a siglos de comercio en Tarragona.'
     },
     cordoba: {
@@ -34,7 +34,7 @@ const LONJAS = {
         nombreCompleto: 'Lonja de Córdoba',
         region: 'Andalucía',
         color: '#7B1FA2',
-        url: 'pages/lonja-cordoba.html',
+        url: '/lonja/cordoba/',
         descripcion: 'La Lonja de Córdoba es la principal referencia para los productores de almendra de Andalucía, cubriendo una zona de producción creciente.'
     }
 };
@@ -92,9 +92,7 @@ const FALLBACK_DATA = {
  * Si falla, usa los datos de fallback embebidos.
  */
 async function loadPriceData() {
-    // Determinar ruta relativa según si estamos en root o en pages/
-    const isSubpage = window.location.pathname.includes('/pages/');
-    const jsonPath = isSubpage ? '../data/precios.json' : 'data/precios.json';
+    const jsonPath = '/data/precios.json';
 
     try {
         const response = await fetch(jsonPath);

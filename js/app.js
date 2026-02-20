@@ -1,5 +1,5 @@
 /* ============================================
-   APP.JS - PrecioAlmendra
+   APP.JS - MercadoAlmendra
    Lógica principal: dashboard, charts, calculadora
    ============================================ */
 
@@ -87,15 +87,15 @@ function initDashboard() {
         card.innerHTML = `
             <div class="price-card__header">
                 <span class="price-card__lonja">${lonja.nombre}</span>
-                <span class="price-card__badge price-card__badge--${badgeClass}">
+                <span class="price-card__badge price-card__badge--${badgeClass}" aria-label="${isUp ? 'Subida' : isDown ? 'Bajada' : 'Estable'} del ${Math.abs(cambio)} por ciento">
                     ${arrow} ${cambio > 0 ? '+' : ''}${cambio}%
                 </span>
             </div>
-            <div class="price-card__price">${media} &euro;</div>
+            <div class="price-card__price">${formatPrice(parseFloat(media))} &euro;</div>
             <div class="price-card__unit">Media &euro;/kg pepita</div>
             <div class="price-card__variety">
-                Comuna: ${comunaPrice ? comunaPrice.actual.toFixed(2) : '--'} &euro; &middot;
-                Marcona: ${getPrecioActual(key, 'Marcona')?.actual.toFixed(2) || '--'} &euro;
+                Comuna: ${comunaPrice ? formatPrice(comunaPrice.actual) : '--'} &euro; &middot;
+                Marcona: ${formatPrice(getPrecioActual(key, 'Marcona')?.actual) || '--'} &euro;
             </div>
             <div class="price-card__mini-chart">
                 <canvas id="mini-${key}"></canvas>
@@ -212,7 +212,7 @@ function renderComparadorChart(range) {
                     borderWidth: 1,
                     padding: 12,
                     callbacks: {
-                        label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)} €/kg`
+                        label: ctx => `${ctx.dataset.label}: ${formatPrice(ctx.parsed.y)} \u20ac/kg`
                     }
                 }
             },
@@ -225,7 +225,7 @@ function renderComparadorChart(range) {
                     grid: { color: isDark ? '#2A3040' : '#F0F0F0' },
                     ticks: {
                         color: isDark ? '#6B7585' : '#8E95A5',
-                        callback: v => v.toFixed(2) + ' €'
+                        callback: v => formatPrice(v) + ' \u20ac'
                     }
                 }
             }
@@ -251,7 +251,7 @@ function initVarietyTable() {
             if (p) {
                 precios.push(p);
                 const cls = p.cambio > 0 ? 'td-up' : p.cambio < 0 ? 'td-down' : '';
-                html += `<td class="td-price ${cls}">${p.actual.toFixed(2)} &euro;</td>`;
+                html += `<td class="td-price ${cls}">${formatPrice(p.actual)} &euro;</td>`;
             } else {
                 html += `<td>--</td>`;
             }
@@ -259,7 +259,7 @@ function initVarietyTable() {
 
         // Media
         const media = precios.reduce((s, p) => s + p.actual, 0) / precios.length;
-        html += `<td class="td-price">${media.toFixed(2)} &euro;</td>`;
+        html += `<td class="td-price">${formatPrice(media)} &euro;</td>`;
 
         // Tendencia
         const avgCambio = precios.reduce((s, p) => s + parseFloat(p.cambioPct), 0) / precios.length;
@@ -301,7 +301,7 @@ function updateCalc() {
     const elDetail = document.getElementById('calcDetail');
 
     if (elIngresos) elIngresos.textContent = formatCurrency(ingresos);
-    if (elDetail) elDetail.textContent = `${kgTotales.toLocaleString('es-ES')} kg x ${precio.actual.toFixed(2)} €/kg`;
+    if (elDetail) elDetail.textContent = `${kgTotales.toLocaleString('es-ES')} kg x ${formatPrice(precio.actual)} \u20ac/kg`;
 }
 
 /* ============================================
@@ -322,19 +322,19 @@ function initTrends() {
             icon: tendencia3m >= 0 ? 'up' : 'down',
             emoji: tendencia3m >= 0 ? '&#128200;' : '&#128201;',
             title: tendencia3m >= 0 ? 'Tendencia alcista' : 'Tendencia bajista',
-            text: `En los últimos 3 meses, el precio medio de la almendra comuna ha ${tendencia3m >= 0 ? 'subido' : 'bajado'} un ${Math.abs(tendencia3mPct)}% en la lonja de Albacete.`
+            text: `En los \u00faltimos 3 meses, el precio medio de la almendra comuna ha ${tendencia3m >= 0 ? 'subido' : 'bajado'} un ${Math.abs(tendencia3mPct)}% en la lonja de Albacete.`
         },
         {
             icon: 'info',
             emoji: '&#127758;',
             title: 'Mercado internacional',
-            text: 'La producción californiana y la demanda asiática siguen siendo los principales factores que influyen en la cotización de la almendra española.'
+            text: 'La producci\u00f3n californiana y la demanda asi\u00e1tica siguen siendo los principales factores que influyen en la cotizaci\u00f3n de la almendra espa\u00f1ola.'
         },
         {
             icon: 'info',
             emoji: '&#127793;',
-            title: 'Campaña 2025/2026',
-            text: `La Marcona cotiza a ${marconaAlba?.actual.toFixed(2)} €/kg en Albacete, manteniendo el diferencial premium sobre la Comuna (${comunaAlba?.actual.toFixed(2)} €/kg).`
+            title: 'Campa\u00f1a 2025/2026',
+            text: `La Marcona cotiza a ${formatPrice(marconaAlba?.actual)} \u20ac/kg en Albacete, manteniendo el diferencial premium sobre la Comuna (${formatPrice(comunaAlba?.actual)} \u20ac/kg).`
         }
     ];
 
@@ -357,9 +357,10 @@ function initAlertForm() {
     document.getElementById('alertForm')?.addEventListener('submit', async (e) => {
         e.preventDefault();
         const input = e.target.querySelector('input[type="email"]');
+        const checkbox = e.target.querySelector('input[type="checkbox"]');
         const btn = e.target.querySelector('button');
         const email = input.value.trim();
-        if (!email) return;
+        if (!email || !checkbox.checked) return;
 
         btn.disabled = true;
         btn.textContent = 'Enviando...';
@@ -434,14 +435,14 @@ function initLonjaChart() {
                     borderColor: isDark ? '#2A3040' : '#E0E4E8',
                     borderWidth: 1,
                     padding: 12,
-                    callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)} €/kg` }
+                    callbacks: { label: ctx => `${ctx.dataset.label}: ${formatPrice(ctx.parsed.y)} \u20ac/kg` }
                 }
             },
             scales: {
                 x: { grid: { color: isDark ? '#2A3040' : '#F0F0F0' }, ticks: { color: isDark ? '#6B7585' : '#8E95A5' } },
                 y: {
                     grid: { color: isDark ? '#2A3040' : '#F0F0F0' },
-                    ticks: { color: isDark ? '#6B7585' : '#8E95A5', callback: v => v.toFixed(2) + ' €' }
+                    ticks: { color: isDark ? '#6B7585' : '#8E95A5', callback: v => formatPrice(v) + ' \u20ac' }
                 }
             }
         }
@@ -462,10 +463,10 @@ function initLonjaHistory() {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${data.meses[i]}</td>
-            <td class="td-price">${data.comuna[i].toFixed(2)} &euro;</td>
-            <td class="td-price">${data.marcona[i].toFixed(2)} &euro;</td>
-            <td class="td-price">${data.largueta[i].toFixed(2)} &euro;</td>
-            <td class="td-price">${data.guara[i].toFixed(2)} &euro;</td>
+            <td class="td-price">${formatPrice(data.comuna[i])} &euro;</td>
+            <td class="td-price">${formatPrice(data.marcona[i])} &euro;</td>
+            <td class="td-price">${formatPrice(data.largueta[i])} &euro;</td>
+            <td class="td-price">${formatPrice(data.guara[i])} &euro;</td>
         `;
         tbody.appendChild(tr);
     }
@@ -492,15 +493,15 @@ function initLonjaVarietyCards() {
         card.innerHTML = `
             <div class="price-card__header">
                 <span class="price-card__lonja">${v}</span>
-                <span class="price-card__badge price-card__badge--${badgeClass}">
+                <span class="price-card__badge price-card__badge--${badgeClass}" aria-label="${isUp ? 'Subida' : isDown ? 'Bajada' : 'Estable'} del ${Math.abs(p.cambioPct)} por ciento">
                     ${arrow} ${p.cambioPct > 0 ? '+' : ''}${p.cambioPct}%
                 </span>
             </div>
-            <div class="price-card__price">${p.actual.toFixed(2)} &euro;</div>
+            <div class="price-card__price">${formatPrice(p.actual)} &euro;</div>
             <div class="price-card__unit">&euro;/kg pepita</div>
             <div class="price-card__variety">
-                Anterior: ${p.anterior.toFixed(2)} &euro; &middot;
-                Cambio: ${p.cambio > 0 ? '+' : ''}${p.cambio.toFixed(2)} &euro;
+                Anterior: ${formatPrice(p.anterior)} &euro; &middot;
+                Cambio: ${p.cambio > 0 ? '+' : ''}${formatPrice(p.cambio)} &euro;
             </div>
         `;
         container.appendChild(card);
@@ -541,7 +542,7 @@ function updateCalcFull() {
     setResultValue('resCostes', formatCurrency(costesTotales));
     setResultValue('resBeneficio', formatCurrency(beneficio));
     setResultValue('resMargen', margen + '%');
-    setResultValue('resPrecioKg', precio.actual.toFixed(2) + ' €/kg');
+    setResultValue('resPrecioKg', formatPrice(precio.actual) + ' \u20ac/kg');
 }
 
 function setResultValue(id, value) {
@@ -552,6 +553,11 @@ function setResultValue(id, value) {
 /* ============================================
    UTILITIES
    ============================================ */
+function formatPrice(value) {
+    if (value === null || value === undefined) return '--';
+    return value.toFixed(2).replace('.', ',');
+}
+
 function hexToRgba(hex, alpha) {
     const r = parseInt(hex.slice(1, 3), 16);
     const g = parseInt(hex.slice(3, 5), 16);

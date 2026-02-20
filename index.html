@@ -5,17 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Precio Almendra Hoy - Cotizaciones en Tiempo Real de las Lonjas Espa&ntilde;olas</title>
     <meta name="description" content="Consulta el precio de la almendra hoy en las principales lonjas de Espa&ntilde;a: Albacete, Murcia, Reus y C&oacute;rdoba. Gr&aacute;ficos hist&oacute;ricos, comparador de precios y calculadora de rentabilidad.">
-    <meta name="keywords" content="precio almendra, precio almendra hoy, cotizacion almendra, lonja albacete, lonja murcia, lonja reus, precio almendra marcona">
-    <link rel="canonical" href="https://precioalmendra.com/">
-    <link rel="manifest" href="manifest.json">
+    <link rel="canonical" href="https://mercadoalmendra.com/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#1B5E20">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Precio Almendra Hoy - Cotizaciones en Tiempo Real">
+    <meta property="og:description" content="Consulta el precio de la almendra hoy en las principales lonjas de Espa&ntilde;a: Albacete, Murcia, Reus y C&oacute;rdoba.">
+    <meta property="og:url" content="https://mercadoalmendra.com/">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="MercadoAlmendra">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Precio Almendra Hoy - Cotizaciones en Tiempo Real">
+    <meta name="twitter:description" content="Consulta el precio de la almendra hoy en las principales lonjas de Espa&ntilde;a.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Schema FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "\u00bfCu\u00e1l es el precio de la almendra hoy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El precio actual de la almendra var\u00eda seg\u00fan la lonja y la variedad. Consulta nuestro comparador actualizado en la parte superior de esta p\u00e1gina para ver las cotizaciones m\u00e1s recientes de Albacete, Murcia, Reus y C\u00f3rdoba."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "\u00bfC\u00f3mo se determina el precio de la almendra en las lonjas?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El precio de la almendra en las lonjas se establece mediante un sistema de negociaci\u00f3n entre compradores y vendedores. Los factores que influyen incluyen la oferta y demanda, la calidad de la cosecha, los precios internacionales (especialmente California) y las condiciones clim\u00e1ticas."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "\u00bfCu\u00e1l es la mejor lonja para vender almendra?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No hay una lonja universalmente mejor. Los precios var\u00edan seg\u00fan la semana y la variedad. Usa nuestro comparador para ver qu\u00e9 lonja ofrece mejor precio en cada momento para tu variedad espec\u00edfica."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "\u00bfCu\u00e1nto pagan por kilo de almendra al agricultor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El precio que recibe el agricultor depende de la variedad, calidad y lonja de referencia. Los precios en lonja son orientativos; el precio final al agricultor suele ser ligeramente inferior tras descontar costes de intermediaci\u00f3n y transporte."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "\u00bfCu\u00e1l es el futuro del precio de la almendra?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Las previsiones dependen de m\u00faltiples factores: producci\u00f3n en California, demanda asi\u00e1tica, condiciones clim\u00e1ticas en el Mediterr\u00e1neo y costes de producci\u00f3n. Consulta nuestra secci\u00f3n de tendencias para un an\u00e1lisis actualizado del mercado."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema WebPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Precio Almendra Hoy",
+        "description": "Cotizaciones actualizadas de almendra de las principales lonjas de Espa\u00f1a",
+        "url": "https://mercadoalmendra.com/",
+        "inLanguage": "es",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "MercadoAlmendra",
+            "url": "https://mercadoalmendra.com/"
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -27,15 +108,15 @@
                     <ellipse cx="16" cy="16" rx="6" ry="10" fill="#DFC08A"/>
                     <line x1="16" y1="3" x2="16" y2="29" stroke="#8B6914" stroke-width="1"/>
                 </svg>
-                <span>PrecioAlmendra</span>
+                <span>MercadoAlmendra</span>
             </a>
             <nav class="header__nav" id="mainNav">
                 <a href="/" class="header__link header__link--active">Inicio</a>
-                <a href="pages/lonja-albacete.html" class="header__link">Albacete</a>
-                <a href="pages/lonja-murcia.html" class="header__link">Murcia</a>
-                <a href="pages/lonja-reus.html" class="header__link">Reus</a>
-                <a href="pages/lonja-cordoba.html" class="header__link">C&oacute;rdoba</a>
-                <a href="pages/calculadora.html" class="header__link">Calculadora</a>
+                <a href="/lonja/albacete/" class="header__link">Albacete</a>
+                <a href="/lonja/murcia/" class="header__link">Murcia</a>
+                <a href="/lonja/reus/" class="header__link">Reus</a>
+                <a href="/lonja/cordoba/" class="header__link">C&oacute;rdoba</a>
+                <a href="/calculadora/" class="header__link">Calculadora</a>
             </nav>
             <div class="header__actions">
                 <button class="btn-icon" id="themeToggle" aria-label="Cambiar tema">
@@ -84,7 +165,9 @@
                         <button class="chip" data-range="all">Todo</button>
                     </div>
                     <div class="chart-wrapper">
-                        <canvas id="comparadorChart"></canvas>
+                        <canvas id="comparadorChart">
+                            <p>Gr&aacute;fico de comparaci&oacute;n de precios entre lonjas. Los datos est&aacute;n disponibles en la tabla inferior.</p>
+                        </canvas>
                     </div>
                 </div>
             </div>
@@ -99,13 +182,13 @@
                     <table class="data-table" id="varietyTable">
                         <thead>
                             <tr>
-                                <th>Variedad</th>
-                                <th>Albacete</th>
-                                <th>Murcia</th>
-                                <th>Reus</th>
-                                <th>C&oacute;rdoba</th>
-                                <th>Media</th>
-                                <th>Tendencia</th>
+                                <th scope="col">Variedad</th>
+                                <th scope="col">Albacete</th>
+                                <th scope="col">Murcia</th>
+                                <th scope="col">Reus</th>
+                                <th scope="col">C&oacute;rdoba</th>
+                                <th scope="col">Media</th>
+                                <th scope="col">Tendencia</th>
                             </tr>
                         </thead>
                         <tbody id="varietyTableBody">
@@ -178,6 +261,10 @@
                     <p class="cta-box__text">Te avisamos cuando el precio suba o baje de tu umbral. Sin spam, solo datos &uacute;tiles.</p>
                     <form class="cta-box__form" id="alertForm">
                         <input type="email" placeholder="Tu email" required class="input">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            Acepto la <a href="/privacidad/">pol&iacute;tica de privacidad</a>
+                        </label>
                         <button type="submit" class="btn btn--primary">Activar alertas</button>
                     </form>
                 </div>
@@ -224,28 +311,28 @@
                         <ellipse cx="16" cy="16" rx="6" ry="10" fill="#DFC08A"/>
                         <line x1="16" y1="3" x2="16" y2="29" stroke="#8B6914" stroke-width="1"/>
                     </svg>
-                    <span>PrecioAlmendra</span>
+                    <span>MercadoAlmendra</span>
                 </a>
                 <p class="footer__desc">Cotizaciones actualizadas de almendra de las principales lonjas espa&ntilde;olas. Informaci&oacute;n para el agricultor.</p>
             </div>
             <div class="footer__links">
                 <h4>Lonjas</h4>
-                <a href="pages/lonja-albacete.html">Lonja de Albacete</a>
-                <a href="pages/lonja-murcia.html">Lonja de Murcia</a>
-                <a href="pages/lonja-reus.html">Lonja de Reus</a>
-                <a href="pages/lonja-cordoba.html">Lonja de C&oacute;rdoba</a>
+                <a href="/lonja/albacete/">Lonja de Albacete</a>
+                <a href="/lonja/murcia/">Lonja de Murcia</a>
+                <a href="/lonja/reus/">Lonja de Reus</a>
+                <a href="/lonja/cordoba/">Lonja de C&oacute;rdoba</a>
             </div>
             <div class="footer__links">
                 <h4>Herramientas</h4>
-                <a href="pages/calculadora.html">Calculadora de rentabilidad</a>
+                <a href="/calculadora/">Calculadora de rentabilidad</a>
             </div>
         </div>
         <div class="container footer__bottom">
-            <p>&copy; 2026 PrecioAlmendra. Los precios mostrados son orientativos y proceden de las lonjas oficiales.</p>
+            <p>&copy; 2026 MercadoAlmendra. Los precios mostrados son orientativos y proceden de las lonjas oficiales.</p>
         </div>
     </footer>
 
-    <script src="js/data.js"></script>
-    <script src="js/app.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

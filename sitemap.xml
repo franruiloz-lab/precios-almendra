@@ -6,28 +6,33 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mercadoalmendra.com/pages/lonja-albacete.html</loc>
+    <loc>https://mercadoalmendra.com/lonja/albacete/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mercadoalmendra.com/pages/lonja-murcia.html</loc>
+    <loc>https://mercadoalmendra.com/lonja/murcia/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mercadoalmendra.com/pages/lonja-reus.html</loc>
+    <loc>https://mercadoalmendra.com/lonja/reus/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mercadoalmendra.com/pages/lonja-cordoba.html</loc>
+    <loc>https://mercadoalmendra.com/lonja/cordoba/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mercadoalmendra.com/pages/calculadora.html</loc>
+    <loc>https://mercadoalmendra.com/calculadora/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mercadoalmendra.com/privacidad/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
