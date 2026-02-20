@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-02-19T16:36:02.635Z",
+  "lastUpdate": "2026-02-20T14:26:10.849Z",
   "source": "Lonjas oficiales de España",
   "lonjas": {
     "albacete": {
@@ -1789,6 +1789,16 @@
     "reus": {
       "cotizaciones": [
         {
+          "fecha": "2026-02-16",
+          "precios": {
+            "comuna": 4.65,
+            "largueta": 5.25,
+            "marcona": 5.7,
+            "guara": 4.9,
+            "ecologica": 5.65
+          }
+        },
+        {
           "fecha": "2026-02-13",
           "precios": {
             "comuna": 5.65,
@@ -2993,6 +3003,16 @@
             "marcona": 7.1,
             "largueta": 5.95,
             "guara": 5.6
+          }
+        },
+        {
+          "fecha": "2026-02-10",
+          "precios": {
+            "comuna": 5.15,
+            "belona": 5.85,
+            "soleta": 5.45,
+            "ecologica": 6.25,
+            "guara": 5.35
           }
         },
         {
