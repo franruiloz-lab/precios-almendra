@@ -212,5 +212,5 @@ function getLastUpdate() {
                        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
         return `${d.getDate()} de ${meses[d.getMonth()]} de ${d.getFullYear()}`;
     }
-    return '20 de febrero de 2026'; // fallback date // fallback date // fallback date // fallback date // fallback date
+    return '21 de febrero de 2026'; // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date
 }
