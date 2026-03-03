@@ -212,5 +212,5 @@ function getLastUpdate() {
                        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
         return `${d.getDate()} de ${meses[d.getMonth()]} de ${d.getFullYear()}`;
     }
-    return '3 de marzo de 2026'; // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date
+    return '3 de marzo de 2026'; // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date
 }
