@@ -66,10 +66,10 @@ const FALLBACK_DATA = {
     },
     murcia: {
         meses: ["Mar 25","Abr 25","May 25","Jun 25","Jul 25","Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26"],
-        comuna:   [4.78, 5.01, 5.32, 5.42, 4.99, 4.92, 5.14, 5.08, 5.65, 5.50, 5.06, 5.45],
-        marcona: [5.70, 5.80, 6.23, 6.31, 5.90, 5.86, 6.02, 6.04, 7.40, 7.25, 6.09, 7.20],
-        largueta: [5.20, 5.26, 5.67, 5.75, 5.31, 5.29, 5.49, 5.49, 6.20, 6.05, 5.57, 6.00],
-        guara:    [4.98, 5.05, 5.46, 5.56, 5.13, 5.06, 5.25, 5.20, 5.85, 5.70, 5.16, 5.65]
+        comuna:   [4.78, 5.01, 5.32, 5.42, 4.99, 4.92, 5.14, 5.08, 5.65, 5.50, 5.06, 5.01],
+        marcona: [5.70, 5.80, 6.23, 6.31, 5.90, 5.86, 6.02, 6.04, 7.40, 7.25, 6.09, 6.06],
+        largueta: [5.20, 5.26, 5.67, 5.75, 5.31, 5.29, 5.49, 5.49, 6.20, 6.05, 5.57, 5.50],
+        guara:    [4.98, 5.05, 5.46, 5.56, 5.13, 5.06, 5.25, 5.20, 5.85, 5.70, 5.16, 5.11]
     },
     reus: {
         meses: ["Mar 25","Abr 25","May 25","Jun 25","Jul 25","Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26"],
@@ -80,10 +80,10 @@ const FALLBACK_DATA = {
     },
     cordoba: {
         meses: ["Mar 25","Abr 25","May 25","Jun 25","Jul 25","Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26"],
-        comuna:   [5.05, 5.00, 5.30, 5.30, 5.10, 5.00, 5.25, 5.10, 5.60, 5.45, 5.15, 5.40],
-        marcona: [6.80, 6.70, null, null, 6.90, null, null, null, 7.30, 7.15, null, 7.10],
-        largueta: [5.65, 5.60, null, null, 5.70, null, null, null, 6.15, 6.00, null, 5.95],
-        guara:    [5.25, 5.20, null, null, 5.30, 5.45, 5.46, 5.30, 5.80, 5.65, 5.35, 5.60]
+        comuna:   [5.05, 5.00, 5.30, 5.30, 5.10, 5.00, 5.25, 5.10, 5.60, 5.45, 5.15, 5.15],
+        marcona: [6.80, 6.70, null, null, 6.90, null, null, null, 7.30, 7.15, null, null],
+        largueta: [5.65, 5.60, null, null, 5.70, null, null, null, 6.15, 6.00, null, null],
+        guara:    [5.25, 5.20, null, null, 5.30, 5.45, 5.46, 5.30, 5.80, 5.65, 5.35, 5.35]
     }
 };
 
@@ -212,5 +212,5 @@ function getLastUpdate() {
                        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
         return `${d.getDate()} de ${meses[d.getMonth()]} de ${d.getFullYear()}`;
     }
-    return '5 de marzo de 2026'; // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date
+    return '6 de marzo de 2026'; // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date
 }
