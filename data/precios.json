@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-03-19T19:49:08.209Z",
+  "lastUpdate": "2026-03-20T13:01:35.340Z",
   "source": "Lonjas oficiales de España",
   "lonjas": {
     "albacete": {
@@ -116,6 +116,17 @@
     },
     "murcia": {
       "cotizaciones": [
+        {
+          "fecha": "2026-03-13",
+          "precios": {
+            "comuna": 4.99,
+            "largueta": 5.47,
+            "marcona": 6.04,
+            "ferragnes": 5.25,
+            "guara": 5.08,
+            "ecologica": 6.58
+          }
+        },
         {
           "fecha": "2026-02-26",
           "precios": {
@@ -1800,6 +1811,17 @@
     "reus": {
       "cotizaciones": [
         {
+          "fecha": "2026-03-16",
+          "precios": {
+            "comuna": 4.65,
+            "largueta": 5.25,
+            "marcona": 5.7,
+            "guara": 4.9,
+            "lauranne": 4.8,
+            "ecologica": 5.65
+          }
+        },
+        {
           "fecha": "2026-02-23",
           "precios": {
             "comuna": 4.65,
@@ -3017,6 +3039,16 @@
     },
     "cordoba": {
       "cotizaciones": [
+        {
+          "fecha": "2026-03-13",
+          "precios": {
+            "comuna": 5.05,
+            "belona": 5.75,
+            "soleta": 5.35,
+            "ecologica": 6.5,
+            "guara": 5.25
+          }
+        },
         {
           "fecha": "2026-02-24",
           "precios": {

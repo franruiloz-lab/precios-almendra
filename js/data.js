@@ -65,25 +65,25 @@ const FALLBACK_DATA = {
         guara:    [5.40, 5.35, 5.30, 5.25, 5.45, 6.00, 6.30, 6.10, 5.95, 5.80, 5.70, 5.75]
     },
     murcia: {
-        meses: ["Mar 25","Abr 25","May 25","Jun 25","Jul 25","Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26"],
-        comuna:   [4.78, 5.01, 5.32, 5.42, 4.99, 4.92, 5.14, 5.08, 5.65, 5.50, 5.06, 5.01],
-        marcona: [5.70, 5.80, 6.23, 6.31, 5.90, 5.86, 6.02, 6.04, 7.40, 7.25, 6.09, 6.06],
-        largueta: [5.20, 5.26, 5.67, 5.75, 5.31, 5.29, 5.49, 5.49, 6.20, 6.05, 5.57, 5.50],
-        guara:    [4.98, 5.05, 5.46, 5.56, 5.13, 5.06, 5.25, 5.20, 5.85, 5.70, 5.16, 5.11]
+        meses: ["Abr 25","May 25","Jun 25","Jul 25","Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26","Mar 26"],
+        comuna:   [5.01, 5.32, 5.42, 4.99, 4.92, 5.14, 5.08, 5.65, 5.50, 5.06, 5.01, 4.99],
+        marcona: [5.80, 6.23, 6.31, 5.90, 5.86, 6.02, 6.04, 7.40, 7.25, 6.09, 6.06, 6.04],
+        largueta: [5.26, 5.67, 5.75, 5.31, 5.29, 5.49, 5.49, 6.20, 6.05, 5.57, 5.50, 5.47],
+        guara:    [5.05, 5.46, 5.56, 5.13, 5.06, 5.25, 5.20, 5.85, 5.70, 5.16, 5.11, 5.08]
     },
     reus: {
-        meses: ["Mar 25","Abr 25","May 25","Jun 25","Jul 25","Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26"],
-        comuna:   [4.40, 5.25, 4.90, 5.00, 5.35, 4.65, 4.70, 6.00, 4.70, 5.70, 4.70, 4.65],
-        marcona: [5.25, 7.00, 5.15, 5.80, 7.20, 5.70, 5.75, 7.80, 5.75, 7.45, 5.75, 5.70],
-        largueta: [4.70, 5.85, 5.15, 5.30, 5.95, 5.15, 5.25, 6.60, 5.30, 6.25, 5.30, 5.25],
-        guara:    [4.65, 5.45, 5.75, 5.30, 5.55, 4.90, 4.95, 6.20, 5.00, 5.90, 4.95, 4.90]
+        meses: ["Abr 25","May 25","Jun 25","Jul 25","Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26","Mar 26"],
+        comuna:   [5.25, 4.90, 5.00, 5.35, 4.65, 4.70, 6.00, 4.70, 5.70, 4.70, 4.65, 4.65],
+        marcona: [7.00, 5.15, 5.80, 7.20, 5.70, 5.75, 7.80, 5.75, 7.45, 5.75, 5.70, 5.70],
+        largueta: [5.85, 5.15, 5.30, 5.95, 5.15, 5.25, 6.60, 5.30, 6.25, 5.30, 5.25, 5.25],
+        guara:    [5.45, 5.75, 5.30, 5.55, 4.90, 4.95, 6.20, 5.00, 5.90, 4.95, 4.90, 4.90]
     },
     cordoba: {
-        meses: ["Mar 25","Abr 25","May 25","Jun 25","Jul 25","Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26"],
-        comuna:   [5.05, 5.00, 5.30, 5.30, 5.10, 5.00, 5.25, 5.10, 5.60, 5.45, 5.15, 5.15],
-        marcona: [6.80, 6.70, null, null, 6.90, null, null, null, 7.30, 7.15, null, null],
-        largueta: [5.65, 5.60, null, null, 5.70, null, null, null, 6.15, 6.00, null, null],
-        guara:    [5.25, 5.20, null, null, 5.30, 5.45, 5.46, 5.30, 5.80, 5.65, 5.35, 5.35]
+        meses: ["Abr 25","May 25","Jun 25","Jul 25","Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26","Mar 26"],
+        comuna:   [5.00, 5.30, 5.30, 5.10, 5.00, 5.25, 5.10, 5.60, 5.45, 5.15, 5.15, 5.05],
+        marcona: [6.70, null, null, 6.90, null, null, null, 7.30, 7.15, null, null, null],
+        largueta: [5.60, null, null, 5.70, null, null, null, 6.15, 6.00, null, null, null],
+        guara:    [5.20, null, null, 5.30, 5.45, 5.46, 5.30, 5.80, 5.65, 5.35, 5.35, 5.25]
     }
 };
 
@@ -212,5 +212,5 @@ function getLastUpdate() {
                        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
         return `${d.getDate()} de ${meses[d.getMonth()]} de ${d.getFullYear()}`;
     }
-    return '19 de marzo de 2026'; // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date
+    return '20 de marzo de 2026'; // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date
 }
