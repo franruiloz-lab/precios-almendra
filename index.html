@@ -31,6 +31,94 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
 
+    <!-- Cookie Banner -->
+    <style>
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: var(--color-card, #ffffff);
+            color: var(--color-text, #333);
+            border-top: 3px solid var(--color-primary, #1B5E20);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+            padding: 16px;
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #cookie-banner.cookie-banner--visible {
+            transform: translateY(0);
+        }
+        .cookie-banner__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .cookie-banner__text {
+            flex: 1;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            min-width: 220px;
+        }
+        .cookie-banner__text a {
+            color: var(--color-primary, #1B5E20);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .cookie-banner__text a:hover {
+            color: var(--color-accent, #C8A96E);
+        }
+        .cookie-banner__actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+        .cookie-btn {
+            padding: 9px 20px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+        .cookie-btn--accept {
+            background: var(--color-primary, #1B5E20);
+            color: #fff;
+            border-color: var(--color-primary, #1B5E20);
+        }
+        .cookie-btn--accept:hover {
+            background: var(--color-accent, #C8A96E);
+            border-color: var(--color-accent, #C8A96E);
+            color: #fff;
+        }
+        .cookie-btn--necessary {
+            background: transparent;
+            color: var(--color-text, #333);
+            border-color: var(--color-primary, #1B5E20);
+        }
+        .cookie-btn--necessary:hover {
+            background: var(--color-primary, #1B5E20);
+            color: #fff;
+        }
+        @media (max-width: 480px) {
+            .cookie-banner__actions {
+                width: 100%;
+            }
+            .cookie-btn {
+                flex: 1;
+                text-align: center;
+            }
+        }
+    </style>
+
     <!-- Schema FAQPage -->
     <script type="application/ld+json">
     {
@@ -349,5 +437,50 @@
 
     <script src="/js/data.js"></script>
     <script src="/js/app.js"></script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+        <div class="cookie-banner__inner">
+            <p class="cookie-banner__text">
+                Usamos cookies para mejorar tu experiencia y analizar el tráfico. Puedes aceptarlas o usar solo las estrictamente necesarias.
+                <a href="/aviso-legal/">Más información</a>.
+            </p>
+            <div class="cookie-banner__actions">
+                <button class="cookie-btn cookie-btn--accept" id="cookieBtnAccept">Aceptar</button>
+                <button class="cookie-btn cookie-btn--necessary" id="cookieBtnNecessary">Solo necesarias</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var banner = document.getElementById('cookie-banner');
+
+            function hideBanner() {
+                banner.classList.remove('cookie-banner--visible');
+            }
+
+            function showBanner() {
+                banner.classList.add('cookie-banner--visible');
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                if (!localStorage.getItem('cookie_consent')) {
+                    // Small delay so the slide-in animation is visible
+                    setTimeout(showBanner, 200);
+                }
+
+                document.getElementById('cookieBtnAccept').addEventListener('click', function () {
+                    localStorage.setItem('cookie_consent', 'all');
+                    hideBanner();
+                });
+
+                document.getElementById('cookieBtnNecessary').addEventListener('click', function () {
+                    localStorage.setItem('cookie_consent', 'necessary');
+                    hideBanner();
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
