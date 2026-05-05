@@ -52,7 +52,7 @@ jobs:
         run: |
           git diff --quiet data/precios.json js/data.js || echo "changes=true" >> $GITHUB_OUTPUT
 
-  - name: Commit y push si hay datos nuevos
+      - name: Commit y push si hay datos nuevos
         if: steps.check_changes.outputs.changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
@@ -61,3 +61,4 @@ jobs:
           git add data/precios.json js/data.js
           git commit -m "Actualizar precios almendra $(date +'%d/%m/%Y')"
           git push
+
