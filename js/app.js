@@ -147,7 +147,9 @@ function renderMiniChart(lonjaKey) {
 let comparadorChartInstance = null;
 
 function initComparadorChart() {
-    renderComparadorChart('3m');
+    const activeBtn = document.querySelector('.chart-controls .chip--active');
+    const initialRange = activeBtn?.dataset?.range || '3m';
+    renderComparadorChart(initialRange);
 
     document.querySelectorAll('.chip[data-range]').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -169,21 +171,30 @@ function renderComparadorChart(range) {
         case '3m': sliceCount = 3; break;
         case '6m': sliceCount = 6; break;
         case '1y': sliceCount = 12; break;
-        default: sliceCount = 12;
+        case 'all': sliceCount = null; break;
+        default: sliceCount = 3;
     }
 
-    const labels = PRECIO_HISTORICO.albacete.meses.slice(-sliceCount);
+    // Usar la referencia de meses alineados de cualquier lonja disponible
+    const refLonja = Object.keys(LONJAS).find(k => PRECIO_HISTORICO?.[k]?.meses?.length) || 'albacete';
+    if (!PRECIO_HISTORICO?.[refLonja]?.meses) return;
+
+    const totalMeses = PRECIO_HISTORICO[refLonja].meses.length;
+    const count = sliceCount ? Math.min(sliceCount, totalMeses) : totalMeses;
+
+    const labels = PRECIO_HISTORICO[refLonja].meses.slice(-count);
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
     const datasets = Object.keys(LONJAS).map(key => ({
         label: LONJAS[key].nombre,
-        data: PRECIO_HISTORICO[key].comuna.slice(-sliceCount),
+        data: PRECIO_HISTORICO[key] ? PRECIO_HISTORICO[key].comuna.slice(-count) : [],
         borderColor: LONJAS[key].color,
         backgroundColor: hexToRgba(LONJAS[key].color, 0.08),
         borderWidth: 2.5,
         fill: false,
         tension: 0.3,
-        pointRadius: 4,
+        spanGaps: true,
+        pointRadius: count > 24 ? 2 : 4,
         pointHoverRadius: 6,
         pointBackgroundColor: LONJAS[key].color
     }));
@@ -460,6 +471,7 @@ function initLonjaHistory() {
     const data = PRECIO_HISTORICO[lonjaKey];
     // Mostrar en orden inverso (más reciente primero)
     for (let i = data.meses.length - 1; i >= 0; i--) {
+        if (data.comuna[i] === null && data.marcona[i] === null && data.largueta[i] === null && data.guara[i] === null) continue;
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${data.meses[i]}</td>

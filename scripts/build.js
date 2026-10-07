@@ -33,30 +33,42 @@ function transformJsonToHistorico(data) {
     const lonjas = ['albacete', 'murcia', 'reus', 'cordoba'];
     const variedades = ['comuna', 'marcona', 'largueta', 'guara'];
 
+    // Agrupar por mes para cada lonja y recopilar meses únicos
+    const porMesPorLonja = {};
+    const todosLosMesesSet = new Set();
+
     for (const lonja of lonjas) {
         const lonjaData = data.lonjas?.[lonja];
         if (!lonjaData?.cotizaciones?.length) continue;
 
-        const porMes = {};
+        porMesPorLonja[lonja] = {};
         for (const cot of lonjaData.cotizaciones) {
             const mesKey = cot.fecha.substring(0, 7);
-            if (!porMes[mesKey] || cot.fecha > porMes[mesKey].fecha) {
-                porMes[mesKey] = cot;
+            if (!porMesPorLonja[lonja][mesKey] || cot.fecha > porMesPorLonja[lonja][mesKey].fecha) {
+                porMesPorLonja[lonja][mesKey] = cot;
             }
+            todosLosMesesSet.add(mesKey);
         }
+    }
 
-        const mesesOrdenados = Object.keys(porMes).sort().slice(-12);
+    // Ordenar cronológicamente y tomar los últimos 12 meses para el fallback
+    const mesesOrdenados = Array.from(todosLosMesesSet).sort().slice(-12);
+    if (mesesOrdenados.length === 0) return result;
 
+    const mesesLabels = mesesOrdenados.map(m => {
+        const [year, month] = m.split('-');
+        return `${MESES_MAP[month] || month} ${year.slice(2)}`;
+    });
+
+    for (const lonja of lonjas) {
+        const cotizacionesMes = porMesPorLonja[lonja] || {};
         result[lonja] = {
-            meses: mesesOrdenados.map(m => {
-                const [year, month] = m.split('-');
-                return `${MESES_MAP[month]} ${year.slice(2)}`;
-            })
+            meses: mesesLabels
         };
 
         for (const v of variedades) {
             result[lonja][v] = mesesOrdenados.map(m =>
-                porMes[m]?.precios?.[v] ?? null
+                cotizacionesMes[m]?.precios?.[v] ?? null
             );
         }
     }
@@ -105,11 +117,10 @@ function main() {
 
     let newJS = currentJS.replace(fallbackRegex, `const FALLBACK_DATA = ${dataBlock};`);
 
-    // También actualizar la fecha de fallback
-    const dateRegex = /return '.*?';(\s*\/\/ fallback date)?/;
+    // También actualizar la fecha de fallback sin duplicar comentarios ni llaves
     newJS = newJS.replace(
-        /return '\d+ de \w+ de \d+';/,
-        `return '${lastUpdateFormatted}'; // fallback date`
+        /return '\d+ de \w+ de \d+';[\s\S]*$/,
+        `return '${lastUpdateFormatted}'; // fallback date\n}\n`
     );
 
     writeFileSync(DATA_JS_FILE, newJS, 'utf-8');

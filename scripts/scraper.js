@@ -101,8 +101,33 @@ function parseTable(html, lonjaKey) {
 
     // Buscar todas las tablas en la página
     $('table').each((tableIdx, table) => {
+        // Encontrar la fila de cabecera específica (busca fila con fecha y alguna variedad)
+        let headerRow = null;
+        $(table).find('tr').each((_, tr) => {
+            if (headerRow) return;
+            const text = $(tr).text().toLowerCase();
+            const hasDate = text.includes('fecha') || text.includes('date');
+            const hasVariety = Object.keys(VARIEDADES_MAP).some(v => text.includes(v));
+            if (hasDate && hasVariety) {
+                headerRow = $(tr);
+            }
+        });
+
+        // Si no se encontró por contenido, buscar en thead
+        if (!headerRow) {
+            const theadTr = $(table).find('thead tr').first();
+            if (theadTr.length) headerRow = theadTr;
+        }
+
+        // Si aún no, tomar la primera fila
+        if (!headerRow) {
+            headerRow = $(table).find('tr').first();
+        }
+
+        if (!headerRow || headerRow.length === 0) return;
+
         const headers = [];
-        $(table).find('thead th, thead td, tr:first-child th, tr:first-child td').each((i, el) => {
+        headerRow.find('th, td').each((_, el) => {
             headers.push($(el).text().trim().toLowerCase());
         });
 
@@ -137,8 +162,10 @@ function parseTable(html, lonjaKey) {
         if (dateColumnIdx === -1) dateColumnIdx = 0;
 
         // Parsear filas de datos
-        $(table).find('tbody tr, tr').each((rowIdx, row) => {
-            if (rowIdx === 0 && $(row).find('th').length > 0) return; // Skip header row
+        $(table).find('tr').each((rowIdx, row) => {
+            // Ignorar la fila de cabecera
+            if ($(row).is(headerRow)) return;
+            if ($(row).find('th').length > 0 && $(row).text().toLowerCase().includes('fecha')) return;
 
             const cells = [];
             $(row).find('td, th').each((i, cell) => {

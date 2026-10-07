@@ -1,9 +1,147 @@
 {
-  "lastUpdate": "2026-10-06T19:12:13.465Z",
+  "lastUpdate": "2026-10-07T11:05:19.923Z",
   "source": "Lonjas oficiales de España",
   "lonjas": {
     "albacete": {
       "cotizaciones": [
+        {
+          "fecha": "2026-09-17",
+          "precios": {
+            "comuna": 5.4,
+            "largueta": 6.4,
+            "marcona": 5.6,
+            "guara": 5.5,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2026-09-10",
+          "precios": {
+            "comuna": 5.4,
+            "largueta": 6.4,
+            "marcona": 5.6,
+            "guara": 5.5,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2026-08-27",
+          "precios": {
+            "comuna": 5.35,
+            "guara": 5.45,
+            "ecologica": 7.75
+          }
+        },
+        {
+          "fecha": "2026-08-06",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 7.2
+          }
+        },
+        {
+          "fecha": "2026-07-23",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 7.2
+          }
+        },
+        {
+          "fecha": "2026-06-25",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 7.1
+          }
+        },
+        {
+          "fecha": "2026-06-11",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 7.1
+          }
+        },
+        {
+          "fecha": "2026-05-28",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 7.05
+          }
+        },
+        {
+          "fecha": "2026-05-15",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.85
+          }
+        },
+        {
+          "fecha": "2026-04-19",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.55
+          }
+        },
+        {
+          "fecha": "2026-03-26",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.5
+          }
+        },
+        {
+          "fecha": "2026-03-13",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.5
+          }
+        },
+        {
+          "fecha": "2026-02-26",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.4
+          }
+        },
+        {
+          "fecha": "2026-02-19",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.4
+          }
+        },
         {
           "fecha": "2026-02-13",
           "precios": {
@@ -11,6 +149,16 @@
             "marcona": 7.3,
             "largueta": 6.1,
             "guara": 5.75
+          }
+        },
+        {
+          "fecha": "2026-01-29",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.3
           }
         },
         {
@@ -23,12 +171,52 @@
           }
         },
         {
+          "fecha": "2026-01-15",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.25
+          }
+        },
+        {
+          "fecha": "2026-01-08",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.25
+          }
+        },
+        {
           "fecha": "2025-12-12",
           "precios": {
             "comuna": 5.6,
             "marcona": 7.35,
             "largueta": 6.15,
             "guara": 5.8
+          }
+        },
+        {
+          "fecha": "2025-12-11",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.25
+          }
+        },
+        {
+          "fecha": "2025-11-27",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.25
           }
         },
         {
@@ -41,12 +229,63 @@
           }
         },
         {
+          "fecha": "2025-11-13",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.55,
+            "marcona": 6.1,
+            "guara": 5.2,
+            "ecologica": 6.2
+          }
+        },
+        {
+          "fecha": "2025-10-30",
+          "precios": {
+            "comuna": 5.05,
+            "largueta": 5.5,
+            "marcona": 6.1,
+            "guara": 5.15,
+            "ecologica": 6.15
+          }
+        },
+        {
           "fecha": "2025-10-16",
           "precios": {
-            "comuna": 5.9,
-            "marcona": 7.7,
-            "largueta": 6.5,
-            "guara": 6.1
+            "comuna": 5.05,
+            "marcona": 6.1,
+            "largueta": 5.5,
+            "guara": 5.15,
+            "ecologica": 6.15
+          }
+        },
+        {
+          "fecha": "2025-10-09",
+          "precios": {
+            "comuna": 5.1,
+            "largueta": 5.5,
+            "marcona": 6.1,
+            "guara": 5.25,
+            "ecologica": 6.2
+          }
+        },
+        {
+          "fecha": "2025-10-02",
+          "precios": {
+            "comuna": 5.2,
+            "largueta": 5.55,
+            "marcona": 6.15,
+            "guara": 5.3,
+            "ecologica": 6.25
+          }
+        },
+        {
+          "fecha": "2025-09-25",
+          "precios": {
+            "comuna": 5.2,
+            "largueta": 5.55,
+            "marcona": 6.15,
+            "guara": 5.35,
+            "ecologica": 6.25
           }
         },
         {
@@ -56,6 +295,30 @@
             "marcona": 7.9,
             "largueta": 6.7,
             "guara": 6.3
+          }
+        },
+        {
+          "fecha": "2025-09-11",
+          "precios": {
+            "comuna": 5.15,
+            "guara": 5.3,
+            "ecologica": 6.15
+          }
+        },
+        {
+          "fecha": "2025-08-28",
+          "precios": {
+            "comuna": 5,
+            "guara": 5.1,
+            "ecologica": 5.9
+          }
+        },
+        {
+          "fecha": "2025-08-21",
+          "precios": {
+            "comuna": 4.95,
+            "guara": 5.05,
+            "ecologica": 5.8
           }
         },
         {
@@ -86,12 +349,32 @@
           }
         },
         {
+          "fecha": "2025-05-22",
+          "precios": {
+            "comuna": 5.4,
+            "largueta": 5.7,
+            "marcona": 6.3,
+            "guara": 5.55,
+            "ecologica": 5.8
+          }
+        },
+        {
           "fecha": "2025-05-15",
           "precios": {
             "comuna": 5.1,
             "marcona": 6.85,
             "largueta": 5.7,
             "guara": 5.3
+          }
+        },
+        {
+          "fecha": "2025-05-08",
+          "precios": {
+            "comuna": 5.25,
+            "largueta": 5.55,
+            "marcona": 6.15,
+            "guara": 5.4,
+            "ecologica": 5.6
           }
         },
         {
@@ -104,12 +387,973 @@
           }
         },
         {
+          "fecha": "2025-04-10",
+          "precios": {
+            "comuna": 5,
+            "largueta": 5.3,
+            "marcona": 5.9,
+            "guara": 5.15,
+            "ecologica": 5.35
+          }
+        },
+        {
+          "fecha": "2025-03-27",
+          "precios": {
+            "comuna": 4.85,
+            "largueta": 5.2,
+            "marcona": 5.85,
+            "guara": 5.1,
+            "ecologica": 5.25
+          }
+        },
+        {
           "fecha": "2025-03-13",
           "precios": {
-            "comuna": 5.2,
+            "comuna": 4.75,
+            "marcona": 5.7,
+            "largueta": 5.1,
+            "guara": 4.9,
+            "ecologica": 5.1
+          }
+        },
+        {
+          "fecha": "2025-02-13",
+          "precios": {
+            "comuna": 4.65,
+            "largueta": 4.95,
+            "marcona": 5.65,
+            "guara": 4.8,
+            "ecologica": 5.05
+          }
+        },
+        {
+          "fecha": "2025-01-30",
+          "precios": {
+            "comuna": 4.6,
+            "largueta": 4.9,
+            "marcona": 5.65,
+            "guara": 4.75,
+            "ecologica": 5.05
+          }
+        },
+        {
+          "fecha": "2025-01-16",
+          "precios": {
+            "comuna": 4.4,
+            "largueta": 4.7,
+            "marcona": 5.5,
+            "guara": 4.5,
+            "ecologica": 4.85
+          }
+        },
+        {
+          "fecha": "2025-01-02",
+          "precios": {
+            "comuna": 4.35,
+            "largueta": 4.7,
+            "marcona": 5.5,
+            "guara": 4.5,
+            "ecologica": 4.85
+          }
+        },
+        {
+          "fecha": "2024-12-26",
+          "precios": {
+            "comuna": 4.35,
+            "largueta": 4.65,
+            "marcona": 5.5,
+            "guara": 4.45,
+            "ecologica": 4.85
+          }
+        },
+        {
+          "fecha": "2024-12-19",
+          "precios": {
+            "comuna": 4.35,
+            "largueta": 4.65,
+            "marcona": 5.5,
+            "guara": 4.45,
+            "ecologica": 4.85
+          }
+        },
+        {
+          "fecha": "2024-12-04",
+          "precios": {
+            "comuna": 4.3,
+            "largueta": 4.6,
+            "marcona": 5.5,
+            "guara": 4.4,
+            "ecologica": 4.9
+          }
+        },
+        {
+          "fecha": "2024-11-14",
+          "precios": {
+            "comuna": 4.2,
+            "largueta": 4.6,
+            "marcona": 5.5,
+            "guara": 4,
+            "ecologica": 5
+          }
+        },
+        {
+          "fecha": "2024-11-07",
+          "precios": {
+            "comuna": 4.15,
+            "largueta": 4.6,
+            "marcona": 5.5,
+            "guara": 4.25,
+            "ecologica": 5
+          }
+        },
+        {
+          "fecha": "2024-10-24",
+          "precios": {
+            "comuna": 4.1,
+            "largueta": 4.6,
+            "marcona": 5.5,
+            "guara": 4.25,
+            "ecologica": 5
+          }
+        },
+        {
+          "fecha": "2024-10-10",
+          "precios": {
+            "comuna": 4.05,
+            "largueta": 4.55,
+            "marcona": 5.5,
+            "guara": 4.2
+          }
+        },
+        {
+          "fecha": "2024-09-26",
+          "precios": {
+            "comuna": 4,
+            "largueta": 4.6,
+            "marcona": 5.35,
+            "guara": 4.15,
+            "ecologica": 5.05
+          }
+        },
+        {
+          "fecha": "2024-09-19",
+          "precios": {
+            "comuna": 4,
+            "largueta": 4.6,
+            "guara": 4.15,
+            "ecologica": 5.05
+          }
+        },
+        {
+          "fecha": "2024-08-29",
+          "precios": {
+            "comuna": 4,
+            "largueta": 4.6,
+            "guara": 4.15,
+            "ecologica": 5.05
+          }
+        },
+        {
+          "fecha": "2024-08-22",
+          "precios": {
+            "comuna": 4,
+            "guara": 4.1
+          }
+        },
+        {
+          "fecha": "2024-07-25",
+          "precios": {
+            "comuna": 3.2,
+            "largueta": 4.2,
+            "marcona": 5.4,
+            "guara": 3.3,
+            "ecologica": 5.2
+          }
+        },
+        {
+          "fecha": "2024-07-11",
+          "precios": {
+            "comuna": 3.2,
+            "largueta": 4.2,
+            "marcona": 5.4,
+            "guara": 3.3,
+            "ecologica": 5.2
+          }
+        },
+        {
+          "fecha": "2024-06-27",
+          "precios": {
+            "comuna": 3.2,
+            "largueta": 4.2,
+            "marcona": 5.4,
+            "guara": 3.3,
+            "ecologica": 5.2
+          }
+        },
+        {
+          "fecha": "2024-06-13",
+          "precios": {
+            "comuna": 3.15,
+            "largueta": 4.2,
+            "marcona": 5.4,
+            "guara": 3.25,
+            "ecologica": 5.2
+          }
+        },
+        {
+          "fecha": "2024-05-30",
+          "precios": {
+            "comuna": 3.15,
+            "largueta": 4.2,
+            "marcona": 5.4,
+            "guara": 3.25,
+            "ecologica": 5.2
+          }
+        },
+        {
+          "fecha": "2024-05-16",
+          "precios": {
+            "comuna": 3.15,
+            "largueta": 4.2,
+            "marcona": 5.4,
+            "guara": 3.25,
+            "ecologica": 5.2
+          }
+        },
+        {
+          "fecha": "2024-05-09",
+          "precios": {
+            "comuna": 3.2,
+            "largueta": 4.25,
+            "marcona": 5.45,
+            "guara": 3.3,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2024-04-25",
+          "precios": {
+            "comuna": 3.2,
+            "largueta": 4.25,
+            "marcona": 5.45,
+            "guara": 3.3,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2024-04-11",
+          "precios": {
+            "comuna": 3.2,
+            "largueta": 4.25,
+            "marcona": 5.45,
+            "guara": 3.3,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2024-03-28",
+          "precios": {
+            "comuna": 3.2,
+            "largueta": 4.25,
+            "marcona": 5.45,
+            "guara": 3.3,
+            "ecologica": 5.3
+          }
+        },
+        {
+          "fecha": "2024-03-07",
+          "precios": {
+            "comuna": 3.2,
+            "largueta": 4.25,
+            "marcona": 5.45,
+            "guara": 3.3,
+            "ecologica": 5.3
+          }
+        },
+        {
+          "fecha": "2024-02-22",
+          "precios": {
+            "comuna": 3.2,
+            "largueta": 4.25,
+            "marcona": 5.45,
+            "guara": 3.3,
+            "ecologica": 5.3
+          }
+        },
+        {
+          "fecha": "2024-02-08",
+          "precios": {
+            "comuna": 3.05,
+            "largueta": 4.2,
+            "marcona": 5.45,
+            "guara": 3.15,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2024-01-25",
+          "precios": {
+            "comuna": 3.05,
+            "largueta": 4.2,
+            "marcona": 5.45,
+            "guara": 3.15,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2024-01-11",
+          "precios": {
+            "comuna": 3.05,
+            "largueta": 4.2,
+            "marcona": 5.45,
+            "guara": 3.15,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2024-01-04",
+          "precios": {
+            "comuna": 3.05,
+            "largueta": 4.2,
+            "marcona": 5.45,
+            "guara": 3.15,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2023-12-14",
+          "precios": {
+            "comuna": 3.05,
+            "largueta": 4.35,
+            "marcona": 5.45,
+            "guara": 3.15,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2023-11-30",
+          "precios": {
+            "comuna": 3.05,
+            "largueta": 4.2,
+            "marcona": 5.45,
+            "guara": 3.15,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2023-11-16",
+          "precios": {
+            "comuna": 3.05,
+            "largueta": 4.2,
+            "marcona": 5.45,
+            "guara": 3.15,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2023-11-02",
+          "precios": {
+            "comuna": 3.05,
+            "largueta": 4.35,
+            "marcona": 5.65,
+            "guara": 3.15,
+            "ecologica": 5.25
+          }
+        },
+        {
+          "fecha": "2023-10-19",
+          "precios": {
+            "comuna": 3.05,
+            "largueta": 4.35,
+            "marcona": 5.7,
+            "guara": 3.15,
+            "ecologica": 5.2
+          }
+        },
+        {
+          "fecha": "2023-10-05",
+          "precios": {
+            "comuna": 3,
+            "largueta": 4.4,
+            "marcona": 5.8,
+            "guara": 3.1,
+            "ecologica": 5.15
+          }
+        },
+        {
+          "fecha": "2023-09-21",
+          "precios": {
+            "comuna": 2.9,
+            "largueta": 4.5,
+            "marcona": 5.8,
+            "guara": 3,
+            "ecologica": 5.1
+          }
+        },
+        {
+          "fecha": "2023-09-07",
+          "precios": {
+            "comuna": 2.85,
+            "guara": 3
+          }
+        },
+        {
+          "fecha": "2023-08-24",
+          "precios": {
+            "comuna": 2.9,
+            "guara": 3
+          }
+        },
+        {
+          "fecha": "2023-06-29",
+          "precios": {
+            "comuna": 3.7,
+            "largueta": 5.6,
+            "marcona": 7.55,
+            "guara": 3.8
+          }
+        },
+        {
+          "fecha": "2023-06-19",
+          "precios": {
+            "comuna": 3.75,
+            "largueta": 5.65,
+            "marcona": 7.6,
+            "guara": 3.85
+          }
+        },
+        {
+          "fecha": "2023-05-25",
+          "precios": {
+            "comuna": 3.8,
+            "largueta": 5.7,
+            "marcona": 7.65,
+            "guara": 3.9
+          }
+        },
+        {
+          "fecha": "2023-05-11",
+          "precios": {
+            "comuna": 3.8,
+            "largueta": 5.7,
+            "marcona": 7.7,
+            "guara": 3.95
+          }
+        },
+        {
+          "fecha": "2023-05-04",
+          "precios": {
+            "comuna": 3.8,
+            "largueta": 5.7,
+            "marcona": 7.7,
+            "guara": 3.95
+          }
+        },
+        {
+          "fecha": "2023-04-27",
+          "precios": {
+            "comuna": 3.8,
+            "largueta": 5.7,
+            "marcona": 7.7,
+            "guara": 3.95
+          }
+        },
+        {
+          "fecha": "2023-04-20",
+          "precios": {
+            "comuna": 3.75,
+            "largueta": 5.65,
+            "marcona": 7.65,
+            "guara": 3.9
+          }
+        },
+        {
+          "fecha": "2023-04-13",
+          "precios": {
+            "comuna": 3.75,
+            "largueta": 5.65,
+            "marcona": 7.65,
+            "guara": 3.9
+          }
+        },
+        {
+          "fecha": "2023-03-23",
+          "precios": {
+            "comuna": 3.75,
+            "largueta": 5.65,
+            "marcona": 7.65,
+            "guara": 3.9
+          }
+        },
+        {
+          "fecha": "2023-03-09",
+          "precios": {
+            "comuna": 3.7,
+            "largueta": 5.6,
+            "marcona": 7.6,
+            "guara": 3.85
+          }
+        },
+        {
+          "fecha": "2023-03-02",
+          "precios": {
+            "comuna": 3.65,
+            "largueta": 5.6,
+            "marcona": 7.6,
+            "guara": 3.8
+          }
+        },
+        {
+          "fecha": "2023-02-23",
+          "precios": {
+            "comuna": 3.65,
+            "largueta": 5.6,
+            "marcona": 7.6,
+            "guara": 3.8
+          }
+        },
+        {
+          "fecha": "2023-02-09",
+          "precios": {
+            "comuna": 3.7,
+            "largueta": 5.6,
+            "marcona": 7.6,
+            "guara": 3.85
+          }
+        },
+        {
+          "fecha": "2023-01-26",
+          "precios": {
+            "comuna": 3.8,
+            "largueta": 5.6,
+            "marcona": 7.6,
+            "guara": 3.95,
+            "ecologica": 6.05
+          }
+        },
+        {
+          "fecha": "2023-01-12",
+          "precios": {
+            "comuna": 3.85,
+            "largueta": 5.6,
+            "marcona": 7.6,
+            "guara": 4,
+            "ecologica": 6.2
+          }
+        },
+        {
+          "fecha": "2022-12-15",
+          "precios": {
+            "comuna": 3.9,
+            "largueta": 5.55,
+            "marcona": 7.55,
+            "guara": 4.05,
+            "ecologica": 6.3
+          }
+        },
+        {
+          "fecha": "2022-11-24",
+          "precios": {
+            "comuna": 3.9,
+            "largueta": 5.45,
+            "marcona": 7.55,
+            "guara": 4.05,
+            "ecologica": 6.5
+          }
+        },
+        {
+          "fecha": "2022-11-10",
+          "precios": {
+            "comuna": 3.9,
+            "largueta": 5.45,
+            "marcona": 7.5,
+            "guara": 4.05,
+            "ecologica": 6.5
+          }
+        },
+        {
+          "fecha": "2022-11-03",
+          "precios": {
+            "comuna": 3.9,
+            "largueta": 5.45,
+            "marcona": 7.5,
+            "guara": 4.05
+          }
+        },
+        {
+          "fecha": "2022-10-20",
+          "precios": {
+            "comuna": 3.9,
+            "largueta": 5.45,
+            "marcona": 7.5,
+            "guara": 4.05
+          }
+        },
+        {
+          "fecha": "2022-10-13",
+          "precios": {
+            "comuna": 3.9,
+            "largueta": 5.45,
+            "marcona": 7.5,
+            "guara": 4.05
+          }
+        },
+        {
+          "fecha": "2022-09-22",
+          "precios": {
+            "comuna": 3.9,
+            "largueta": 5.35,
+            "marcona": 7.4,
+            "guara": 4.05,
+            "ecologica": 7.7
+          }
+        },
+        {
+          "fecha": "2022-09-07",
+          "precios": {
+            "comuna": 3.9,
+            "largueta": 5.35,
+            "marcona": 7.4,
+            "guara": 4.05,
+            "ecologica": 7.7
+          }
+        },
+        {
+          "fecha": "2022-08-25",
+          "precios": {
+            "comuna": 3.9,
+            "guara": 4,
+            "ecologica": 7.7
+          }
+        },
+        {
+          "fecha": "2022-08-11",
+          "precios": {
+            "comuna": 3.8,
+            "largueta": 5.45,
+            "marcona": 7.35,
+            "guara": 3.9,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2022-07-21",
+          "precios": {
+            "comuna": 3.8,
+            "largueta": 5.45,
+            "marcona": 7.35,
+            "guara": 3.9,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2022-07-07",
+          "precios": {
+            "comuna": 3.8,
+            "largueta": 5.45,
+            "marcona": 7.35,
+            "guara": 3.9,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2022-06-23",
+          "precios": {
+            "comuna": 3.8,
+            "largueta": 5.45,
+            "marcona": 7.35,
+            "guara": 3.9,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2022-06-09",
+          "precios": {
+            "comuna": 3.8,
+            "largueta": 5.45,
+            "marcona": 7.35,
+            "guara": 3.9,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2022-05-26",
+          "precios": {
+            "comuna": 3.75,
+            "largueta": 5.45,
+            "marcona": 7.35,
+            "guara": 3.9,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2022-05-19",
+          "precios": {
+            "comuna": 3.75,
+            "largueta": 5.45,
+            "marcona": 7.35,
+            "guara": 3.85,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2022-05-05",
+          "precios": {
+            "comuna": 3.75,
+            "largueta": 5.45,
+            "marcona": 7.35,
+            "guara": 3.85,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2022-04-21",
+          "precios": {
+            "comuna": 3.75,
+            "largueta": 5.45,
+            "marcona": 7.35,
+            "guara": 3.85,
+            "ecologica": 7.85
+          }
+        },
+        {
+          "fecha": "2022-03-24",
+          "precios": {
+            "comuna": 3.65,
+            "largueta": 5.35,
+            "marcona": 7.25,
+            "guara": 3.75,
+            "ecologica": 7.8
+          }
+        },
+        {
+          "fecha": "2022-03-17",
+          "precios": {
+            "comuna": 3.65,
+            "largueta": 5.35,
+            "marcona": 7.25,
+            "guara": 3.75,
+            "ecologica": 7.95
+          }
+        },
+        {
+          "fecha": "2022-02-24",
+          "precios": {
+            "comuna": 3.65,
+            "largueta": 5.35,
+            "marcona": 7.25,
+            "guara": 3.75,
+            "ecologica": 8.15
+          }
+        },
+        {
+          "fecha": "2022-02-03",
+          "precios": {
+            "comuna": 3.65,
+            "largueta": 5.35,
+            "marcona": 7.2,
+            "guara": 3.75,
+            "ecologica": 8.15
+          }
+        },
+        {
+          "fecha": "2022-01-13",
+          "precios": {
+            "comuna": 3.65,
+            "largueta": 5.35,
+            "marcona": 7.1,
+            "guara": 3.8,
+            "ecologica": 8.25
+          }
+        },
+        {
+          "fecha": "2021-12-30",
+          "precios": {
+            "comuna": 3.7,
+            "largueta": 5.4,
+            "marcona": 7.1,
+            "guara": 3.85,
+            "ecologica": 8.5
+          }
+        },
+        {
+          "fecha": "2021-12-16",
+          "precios": {
+            "comuna": 3.7,
+            "largueta": 5.4,
+            "marcona": 7.1,
+            "guara": 3.85,
+            "ecologica": 8.5
+          }
+        },
+        {
+          "fecha": "2021-12-02",
+          "precios": {
+            "comuna": 3.7,
+            "largueta": 5.4,
+            "marcona": 7.1,
+            "guara": 3.85,
+            "ecologica": 8.5
+          }
+        },
+        {
+          "fecha": "2021-11-25",
+          "precios": {
+            "comuna": 3.7,
+            "largueta": 5.35,
             "marcona": 7,
-            "largueta": 5.8,
-            "guara": 5.4
+            "guara": 3.85,
+            "ecologica": 8.5
+          }
+        },
+        {
+          "fecha": "2021-11-18",
+          "precios": {
+            "comuna": 3.75,
+            "largueta": 5.35,
+            "marcona": 7,
+            "guara": 3.9,
+            "ecologica": 8.7
+          }
+        },
+        {
+          "fecha": "2021-10-18",
+          "precios": {
+            "comuna": 3.5,
+            "largueta": 5.2,
+            "marcona": 6.55,
+            "guara": 3.65,
+            "ecologica": 8.3
+          }
+        },
+        {
+          "fecha": "2021-10-06",
+          "precios": {
+            "comuna": 3.5,
+            "largueta": 5.2,
+            "marcona": 6.55,
+            "guara": 3.65,
+            "ecologica": 8.3
+          }
+        },
+        {
+          "fecha": "2021-09-16",
+          "precios": {
+            "comuna": 3.5,
+            "largueta": 5.2,
+            "marcona": 6.55,
+            "guara": 3.65,
+            "ecologica": 8.3
+          }
+        },
+        {
+          "fecha": "2021-09-02",
+          "precios": {
+            "comuna": 3.5,
+            "largueta": 5.2,
+            "marcona": 6.55,
+            "guara": 3.65,
+            "ecologica": 8.3
+          }
+        },
+        {
+          "fecha": "2021-08-22",
+          "precios": {
+            "comuna": 3.5,
+            "largueta": 5.2,
+            "marcona": 6.55,
+            "guara": 3.65,
+            "ecologica": 8.3
+          }
+        },
+        {
+          "fecha": "2021-08-12",
+          "precios": {
+            "comuna": 3.5,
+            "largueta": 5.2,
+            "marcona": 6.55,
+            "guara": 3.65,
+            "ecologica": 8.3
+          }
+        },
+        {
+          "fecha": "2021-08-05",
+          "precios": {
+            "comuna": 3.5,
+            "largueta": 5.2,
+            "marcona": 6.55,
+            "guara": 3.65,
+            "ecologica": 8.3
+          }
+        },
+        {
+          "fecha": "2021-07-29",
+          "precios": {
+            "comuna": 3.4,
+            "largueta": 5.15,
+            "marcona": 6.5,
+            "guara": 3.55,
+            "ecologica": 8.25
+          }
+        },
+        {
+          "fecha": "2021-07-22",
+          "precios": {
+            "comuna": 3,
+            "largueta": 5.15,
+            "marcona": 6.5,
+            "guara": 3.55,
+            "ecologica": 8.25
+          }
+        },
+        {
+          "fecha": "2021-07-15",
+          "precios": {
+            "comuna": 3.15,
+            "largueta": 5.1,
+            "marcona": 6.45,
+            "guara": 3.3,
+            "ecologica": 8.2
+          }
+        },
+        {
+          "fecha": "2021-07-08",
+          "precios": {
+            "comuna": 3,
+            "largueta": 4.95,
+            "marcona": 6.3,
+            "guara": 3.15,
+            "ecologica": 8.05
+          }
+        },
+        {
+          "fecha": "2021-07-01",
+          "precios": {
+            "comuna": 3,
+            "largueta": 4.95,
+            "marcona": 6.3,
+            "guara": 3.15,
+            "ecologica": 8.05
+          }
+        },
+        {
+          "fecha": "2021-06-24",
+          "precios": {
+            "comuna": 2.95,
+            "largueta": 4.95,
+            "marcona": 6.25,
+            "guara": 3.1,
+            "ecologica": 8
+          }
+        },
+        {
+          "fecha": "2021-06-17",
+          "precios": {
+            "comuna": 2.95,
+            "largueta": 4.95,
+            "marcona": 6.25,
+            "guara": 3.1,
+            "ecologica": 8
           }
         }
       ]

@@ -58,11 +58,11 @@ let LAST_UPDATE_DATE = null;
 // Datos de fallback (usados si no se puede cargar el JSON)
 const FALLBACK_DATA = {
     albacete: {
-        meses: ["Mar 25","Abr 25","May 25","Jun 25","Jul 25","Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26"],
-        comuna:   [5.20, 5.15, 5.10, 5.05, 5.25, 5.80, 6.10, 5.90, 5.75, 5.60, 5.50, 5.55],
-        marcona: [7.00, 6.90, 6.85, 6.80, 7.10, 7.60, 7.90, 7.70, 7.50, 7.35, 7.20, 7.30],
-        largueta: [5.80, 5.75, 5.70, 5.65, 5.85, 6.40, 6.70, 6.50, 6.30, 6.15, 6.05, 6.10],
-        guara:    [5.40, 5.35, 5.30, 5.25, 5.45, 6.00, 6.30, 6.10, 5.95, 5.80, 5.70, 5.75]
+        meses: ["Oct 25","Nov 25","Dic 25","Ene 26","Feb 26","Mar 26","Abr 26","May 26","Jun 26","Jul 26","Ago 26","Sep 26"],
+        comuna:   [5.05, 5.10, 5.60, 5.10, 5.10, 5.10, 5.10, 5.10, 5.10, 5.10, 5.35, 5.40],
+        marcona: [6.10, 6.10, 7.35, 6.10, 6.10, 6.10, 6.10, 6.10, 6.10, 6.10, null, 5.60],
+        largueta: [5.50, 5.55, 6.15, 5.55, 5.55, 5.55, 5.55, 5.55, 5.55, 5.55, null, 6.40],
+        guara:    [5.15, 5.20, 5.80, 5.20, 5.20, 5.20, 5.20, 5.20, 5.20, 5.20, 5.45, 5.50]
     },
     murcia: {
         meses: ["Oct 25","Nov 25","Dic 25","Ene 26","Feb 26","Mar 26","Abr 26","May 26","Jun 26","Jul 26","Ago 26","Sep 26"],
@@ -72,18 +72,18 @@ const FALLBACK_DATA = {
         guara:    [5.20, 5.85, 5.70, 5.16, 5.11, 5.08, 5.09, 5.14, 5.16, 5.18, 5.27, 5.41]
     },
     reus: {
-        meses: ["Ago 25","Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26","Mar 26","Abr 26","May 26","Jun 26","Ago 26"],
-        comuna:   [4.65, 4.70, 6.00, 4.70, 5.70, 4.70, 4.65, 4.65, 4.65, 4.60, 4.55, 4.95],
-        marcona: [5.70, 5.75, 7.80, 5.75, 7.45, 5.75, 5.70, 5.70, 5.70, 5.60, 5.55, null],
-        largueta: [5.15, 5.25, 6.60, 5.30, 6.25, 5.30, 5.25, 5.25, 5.25, 5.25, 5.15, null],
-        guara:    [4.90, 4.95, 6.20, 5.00, 5.90, 4.95, 4.90, 4.90, 4.90, 4.90, 4.85, 5.15]
+        meses: ["Oct 25","Nov 25","Dic 25","Ene 26","Feb 26","Mar 26","Abr 26","May 26","Jun 26","Jul 26","Ago 26","Sep 26"],
+        comuna:   [6.00, 4.70, 5.70, 4.70, 4.65, 4.65, 4.65, 4.60, 4.55, null, 4.95, null],
+        marcona: [7.80, 5.75, 7.45, 5.75, 5.70, 5.70, 5.70, 5.60, 5.55, null, null, null],
+        largueta: [6.60, 5.30, 6.25, 5.30, 5.25, 5.25, 5.25, 5.25, 5.15, null, null, null],
+        guara:    [6.20, 5.00, 5.90, 4.95, 4.90, 4.90, 4.90, 4.90, 4.85, null, 5.15, null]
     },
     cordoba: {
-        meses: ["Sep 25","Oct 25","Nov 25","Dic 25","Ene 26","Feb 26","Mar 26","Abr 26","May 26","Jun 26","Ago 26","Sep 26"],
-        comuna:   [5.25, 5.10, 5.60, 5.45, 5.15, 5.15, 5.05, 5.05, 5.05, 5.05, 5.25, 5.35],
-        marcona: [null, null, 7.30, 7.15, null, null, null, null, null, null, null, null],
-        largueta: [null, null, 6.15, 6.00, null, null, null, null, null, null, null, null],
-        guara:    [5.46, 5.30, 5.80, 5.65, 5.35, 5.35, 5.25, 5.25, 5.25, 5.25, null, 5.55]
+        meses: ["Oct 25","Nov 25","Dic 25","Ene 26","Feb 26","Mar 26","Abr 26","May 26","Jun 26","Jul 26","Ago 26","Sep 26"],
+        comuna:   [5.10, 5.60, 5.45, 5.15, 5.15, 5.05, 5.05, 5.05, 5.05, null, 5.25, 5.35],
+        marcona: [null, 7.30, 7.15, null, null, null, null, null, null, null, null, null],
+        largueta: [null, 6.15, 6.00, null, null, null, null, null, null, null, null, null],
+        guara:    [5.30, 5.80, 5.65, 5.35, 5.35, 5.25, 5.25, 5.25, 5.25, null, null, 5.55]
     }
 };
 
@@ -117,7 +117,7 @@ async function loadPriceData() {
     DATA_SOURCE = 'fallback';
 }
 
-/**
+/*/**
  * Transforma el formato de precios.json al formato PRECIO_HISTORICO del frontend
  */
 function transformJsonToHistorico(data) {
@@ -125,31 +125,42 @@ function transformJsonToHistorico(data) {
     const lonjas = ['albacete', 'murcia', 'reus', 'cordoba'];
     const variedades = ['comuna', 'marcona', 'largueta', 'guara'];
 
+    // Agrupar cotizaciones por mes para cada lonja
+    const porMesPorLonja = {};
+    const todosLosMesesSet = new Set();
+
     for (const lonja of lonjas) {
         const lonjaData = data.lonjas?.[lonja];
         if (!lonjaData?.cotizaciones?.length) continue;
 
-        // Agrupar por mes (último dato de cada mes)
-        const porMes = {};
+        porMesPorLonja[lonja] = {};
         for (const cot of lonjaData.cotizaciones) {
-            const mesKey = cot.fecha.substring(0, 7);
-            if (!porMes[mesKey] || cot.fecha > porMes[mesKey].fecha) {
-                porMes[mesKey] = cot;
+            const mesKey = cot.fecha.substring(0, 7); // YYYY-MM
+            if (!porMesPorLonja[lonja][mesKey] || cot.fecha > porMesPorLonja[lonja][mesKey].fecha) {
+                porMesPorLonja[lonja][mesKey] = cot;
             }
+            todosLosMesesSet.add(mesKey);
         }
+    }
 
-        const mesesOrdenados = Object.keys(porMes).sort().slice(-12);
+    // Orden cronológico de todos los meses de todas las lonjas
+    const mesesOrdenados = Array.from(todosLosMesesSet).sort();
+    if (mesesOrdenados.length === 0) return result;
 
+    const mesesLabels = mesesOrdenados.map(m => {
+        const [year, month] = m.split('-');
+        return `${MESES_MAP[month] || month} ${year.slice(2)}`;
+    });
+
+    for (const lonja of lonjas) {
+        const cotizacionesMes = porMesPorLonja[lonja] || {};
         result[lonja] = {
-            meses: mesesOrdenados.map(m => {
-                const [year, month] = m.split('-');
-                return `${MESES_MAP[month]} ${year.slice(2)}`;
-            })
+            meses: mesesLabels
         };
 
         for (const v of variedades) {
             result[lonja][v] = mesesOrdenados.map(m =>
-                porMes[m]?.precios?.[v] ?? null
+                cotizacionesMes[m]?.precios?.[v] ?? null
             );
         }
     }
@@ -165,12 +176,24 @@ function getPrecioActual(lonja, variedad) {
     if (!PRECIO_HISTORICO || !PRECIO_HISTORICO[lonja]) return null;
     const key = variedad.toLowerCase();
     const datos = PRECIO_HISTORICO[lonja][key];
-    if (!datos || datos.length < 2) return null;
-    const actual = datos[datos.length - 1];
-    const anterior = datos[datos.length - 2];
-    if (actual === null || anterior === null) return null;
-    const cambio = actual - anterior;
-    const cambioPct = ((cambio / anterior) * 100).toFixed(1);
+    if (!datos || datos.length === 0) return null;
+
+    let actual = null;
+    let anterior = null;
+    for (let i = datos.length - 1; i >= 0; i--) {
+        if (datos[i] !== null) {
+            if (actual === null) {
+                actual = datos[i];
+            } else if (anterior === null) {
+                anterior = datos[i];
+                break;
+            }
+        }
+    }
+
+    if (actual === null) return null;
+    const cambio = anterior !== null ? actual - anterior : 0;
+    const cambioPct = anterior !== null && anterior !== 0 ? ((cambio / anterior) * 100).toFixed(1) : '0.0';
     return { actual, anterior, cambio, cambioPct, datos };
 }
 
@@ -212,5 +235,5 @@ function getLastUpdate() {
                        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
         return `${d.getDate()} de ${meses[d.getMonth()]} de ${d.getFullYear()}`;
     }
-    return '6 de octubre de 2026'; // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date // fallback date
+    return '7 de octubre de 2026'; // fallback date
 }
