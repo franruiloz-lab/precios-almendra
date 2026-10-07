@@ -95,7 +95,7 @@ async function loadPriceData() {
     const jsonPath = '/data/precios.json';
 
     try {
-        const response = await fetch(jsonPath);
+        const response = await fetch(jsonPath, { cache: 'no-cache' });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
 
