@@ -235,5 +235,5 @@ function getLastUpdate() {
                        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
         return `${d.getDate()} de ${meses[d.getMonth()]} de ${d.getFullYear()}`;
     }
-    return '25 de noviembre de 2026'; // fallback date
+    return '27 de noviembre de 2026'; // fallback date
 }
